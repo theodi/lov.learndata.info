@@ -1,0 +1,46 @@
+{% from 'macros.j2' import docs_sdotermlink as sdotermlink with context %}
+<!DOCTYPE html>
+<html lang="en">
+<!-- Generated from Home.j2 -->
+    {% include 'docs/DocsHead.j2' with context %}
+<body>
+    {% include 'PageHeader.j2' with context %}
+  <div id="mainContent" class="faq">
+
+
+<h1>Organization of Schemas</h1>
+The schemas are a set of 'types', each associated with a set of properties. The types are arranged in a hierarchy.<br/>
+The vocabulary currently consists of {{termcounts["Type"]}} Types, {{termcounts["Property"]}} Properties {{termcounts["Datatype"]}} Datatypes, {{termcounts["Enumeration"]}} Enumerations and {{termcounts["Enumerationvalue"]}} Enumeration members.<br/>
+
+<br /><b>Browse the full hierarchy in HTML:</b>
+<ul>
+  <li><a href="../Thing">One page per type</a></li>
+  <li><a href="full.html">Full list of types, shown on one page</a></li>
+</ul>
+{% if not "notermfinder" in BUILDOPTS %}
+  <script src="{{docsdir}}/termfind/termfind.js"></script>
+  <link rel="stylesheet" type="text/css" href="{{docsdir}}/termfind/termfind.css" />
+
+  <br /><div>
+    <b>Look up a term using the Term<em>Finder</em>:</b>
+    <div id="termfindwrap">
+      <div id="termfindprompt">
+        <input type="text" id="termfind" size="20" style="display: inline-block;" placeholder=" input 3+ characters" onkeyup="suggest(this.value)">
+      </div>
+      <div id="suggestionwrap">
+        <div id="suggestions"></div>
+      </div>
+    </div>
+  </div>
+
+{% endif %}
+
+<br/>See also the <a href="releases.html">releases</a> page for recent updates and project history.<br/>
+
+  </div><!-- mainContent -->
+
+
+	{% include 'PageFooter.j2' with context %}
+
+</body>
+</html>

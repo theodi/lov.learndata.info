@@ -1,0 +1,64 @@
+{% macro Link(term) -%}
+    {% if term.pending %}{% set CLASS = "ext ext-pending" %}
+    {% elif term.retired %}{% set CLASS = "ext ext-attic" %}
+    {% else %}{% set CLASS = "core" %}
+    {% endif %}
+    {% if term.id %}{% set name = term.id %}{% else %}{% set name = term %}{% endif %}
+    <a href="#term_{{name}}" class="{{CLASS}}" title="{{name}}">{{name}}</a>
+{%- endmacro %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<!-- Generated from FullRelease.j2 -->
+<head>
+    <title>{{ title }} - {{ sitename }} {{ SUBNAME }}</title>
+    <meta charset="utf-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="lov.learndata.info is a set of extensible schemas that enables webmasters to embed
+    structured data on their web pages for use by search engines and other applications." />
+    <link rel="shortcut icon" type="image/png" href="{{docsdir}}/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="https://schema.org/schemaorg.css" />
+    <link rel="stylesheet" type="text/css" href="{{docsdir}}/schemaorg.css" />
+    <link rel="stylesheet" type="text/css" href="{{docsdir}}/devnote.css" />
+    <link rel="stylesheet" type="text/css" href="{{docsdir}}/prettify.css" />
+    <link rel="stylesheet" type="text/css" href="{{docsdir}}/devnote.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{{docsdir}}/schemaorg.js"></script>
+
+</head>
+    {% include 'docs/DocsHead.j2' with context %}
+<body>
+    {% include 'PageHeader.j2' with context %}
+  <div id="mainContent">
+
+<h1>lov.learndata.info Version {{version}}</h1>
+
+<dl>
+
+ <dt>Version:</dt>
+ <dd>{{version}}</dd>
+
+ <dt>Archive URL:</dt>
+ <dd><a href="https://github.com/theodi/lov.learndata.info/tree/main/data/releases/{{version}}/">
+     https://github.com/theodi/lov.learndata.info/tree/main/data/releases/{{version}}/</a></dd>
+
+ <dt>Published:</dt>
+ <dd>{{date}}</dd>
+
+ <dt>Alternate formats: </dt>
+  <dd>
+     This release, full core and extension definition files in N-Triples, Quads, JSON-LD, and Turtle formats, are also available for <a href="/docs/developers.html#defs">download</a>.
+  </dd>
+
+<p>
+
+</div><!-- mainContent -->
+
+
+{% include 'PageFooter.j2' with context %}
+
+</body>
+</html>
+
+

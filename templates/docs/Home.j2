@@ -1,0 +1,82 @@
+{% from 'macros.j2' import docs_sdotermlink as sdotermlink with context %}
+<!DOCTYPE html>
+<html lang="en">
+<!-- Generated from Home.j2 -->
+    {% include 'docs/DocsHead.j2' with context %}
+<body>
+    {% include 'PageHeader.j2' with context %}
+    <link rel="stylesheet" type="text/css" href="{{docsdir}}/detailTree/detailTree.css" />
+    <script src="{{docsdir}}/detailTree/detailTree.js"></script>
+    <div id="mainContent">
+      <h1>Welcome to lov.learndata.info</h1>
+      <p>This service is a version of schema.org which is tailored to support the rollout of custom linked vocabularies.</p>
+      <h2>Term finder</h2>
+      <p>Use the term finder to search for terms.</p>
+      <br/>
+
+        <div id="termfindwrap">
+        <div id="termfindprompt">
+            <input type="text" id="termfind" size="20" style="display: inline-block;" placeholder=" input 3+ characters" onkeyup="suggest(this.value)">
+        </div>
+        <div id="suggestionwrap">
+            <div id="suggestions"></div>
+        </div>
+        </div>
+        <br/>
+        <br/>
+
+        {% for node in listings recursive %}
+      {% if loop.depth == 1 %}
+      <div class="dttTreeContainer">
+        <div>
+            {% if node.title %}<h2 id="Listing{{loop.index}}">{{node.title}}</h2>{% endif %}
+            <br/>
+            <span class="ddtCloseAll" role="button" data-treeid="tree{{loop.index}}">Close hierarchy</span> /
+            <span class="ddtOpenAll" role="button" data-treeid="tree{{loop.index}}">Open hierarchy</span>
+            <br/>
+        </div>
+
+        <ul class="dttTree" id="tree{{loop.index}}">
+
+      {% endif %}
+      {% if not node.retired %}
+        {% if node.subs %}
+          <li
+            class="dttBranch"
+            {% if loop.depth == 1 %}
+              data-dttState="treeopen"
+            {% else %}
+              data-dttState="treeclosed"
+            {% endif %}
+            id="C.{{node.id}}">
+            <span class="rowicon"></span>
+            <div class="dttLabel">
+              {{ sdotermlink(node)|safe }}
+           </div>
+           <span class="plusminus"> </span>
+             <details class="dttDetails" {% if loop.depth == 1 %} open {% else %} {% endif %}>
+              <summary aria-label="{{node.id}}"></summary>
+              <ul class="dttSubTree" >
+                {{ loop(node.subs) }}
+              </ul>
+            </details>
+          </li>
+        {% else %}
+          <li
+            class="dttLeaf">
+            <span class="rowicon"></span>
+            {% if node.termType == "Enumerationvalue" %}::{% endif %}
+            {{ sdotermlink(node)|safe }}
+         </li>
+        {% endif %}
+
+     {% endif %}
+     {% if loop.depth == 1 %}
+        </ul>
+      </div>
+      {% endif %}
+    {% endfor %}
+    </div> <!-- mainContent -->
+	{% include 'PageFooter.j2' with context %}
+</body>
+</html>

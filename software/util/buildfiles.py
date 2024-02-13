@@ -94,7 +94,7 @@ def owl(page):
 
 def sitemap(page):
     node = """ <url>
-   <loc>https://schema.org/%s</loc>
+   <loc>https://lov.learndata.info/%s</loc>
    <lastmod>%s</lastmod>
  </url>
 """
@@ -162,7 +162,7 @@ def exportrdf(exportType):
                 ?s ?p ?o.
                 FILTER (! strstarts(str(?s), "%s://schema.org") ).
             }""" % (protocol)
-        allGraph.update(deloddtriples)
+        #allGraph.update(deloddtriples)
         currentGraph += allGraph
 
 
@@ -182,11 +182,14 @@ def exportrdf(exportType):
             ?s ?p ?o;
                 schema:isPartOf <%s://attic.schema.org>.
         }""" % (protocol,protocol)
-        currentGraph.update(delattic)
+        #currentGraph.update(delattic)
 
     formats =  ["json-ld", "turtle", "nt", "nquads", "rdf"]
     extype = exportType[len("RDFExport."):]
     if exportType == "RDFExports":
+        print("graph")
+        kwargs = {'sort_keys': True}
+        print(currentGraph.serialize(format="nt",auto_compact=True,**kwargs))
         for format in sorted(formats):
             _exportrdf(format,allGraph,currentGraph)
     elif extype in formats:
@@ -213,11 +216,11 @@ def _exportrdf(format,all,current):
             g = current
         if format == "nquads":
             gr = rdflib.Dataset()
-            qg = gr.graph(URIRef("%s://schema.org/%s" % (protocol,getVersion())))
+            qg = gr.graph(URIRef("%s://lov.learndata.info/%s" % (protocol,getVersion())))
             qg += g
             g = gr
-        fn = fileName("releases/%s/schemaorg-%s-%s%s" % (getVersion(),ver,protocol,exts[format]))
-        afn = fileName("releases/%s/schemaorg-%s-%s%s" % (getVersion(),ver,altprotocol,exts[format]))
+        fn = fileName("releases/%s/lov-%s-%s%s" % (getVersion(),ver,protocol,exts[format]))
+        afn = fileName("releases/%s/lov-%s-%s%s" % (getVersion(),ver,altprotocol,exts[format]))
         fmt = format
         if format == "rdf":
             fmt = "pretty-xml"
@@ -317,8 +320,8 @@ def exportcsv(page):
 
 def writecsvout(ftype,data,fields,ver,protocol,altprotocol):
     import csv
-    fn = fileName("releases/%s/schemaorg-%s-%s-%s.csv" % (getVersion(),ver,protocol,ftype))
-    afn = fileName("releases/%s/schemaorg-%s-%s-%s.csv" % (getVersion(),ver,altprotocol,ftype))
+    fn = fileName("releases/%s/lov-%s-%s-%s.csv" % (getVersion(),ver,protocol,ftype))
+    afn = fileName("releases/%s/lov-%s-%s-%s.csv" % (getVersion(),ver,altprotocol,ftype))
     csvout = io.StringIO()
     csvfile = open(fn,'w', encoding='utf8')
     acsvfile = open(afn,'w', encoding='utf8')

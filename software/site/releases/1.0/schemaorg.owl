@@ -20,26 +20,26 @@
 	/////////////////////
 	-->
 	<owl:Class rdf:about="https://lov.learndata.info/Intangible">
-		<rdfs:label xml:lang="en">Intangible</rdfs:label>
-		<rdfs:subClassOf rdf:resource="https://lov.learndata.info/Thing"/>
 		<rdfs:comment xml:lang="en">A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="https://lov.learndata.info/Thing"/>
+		<rdfs:label xml:lang="en">Intangible</rdfs:label>
 		<rdfs:isDefinedBy rdf:resource="https://lov.learndata.info/Intangible"/>
 	</owl:Class>
 	<owl:Class rdf:about="https://lov.learndata.info/Payment">
 		<rdfs:label xml:lang="en">Payment</rdfs:label>
-		<rdfs:subClassOf rdf:resource="https://lov.learndata.info/Intangible"/>
 		<rdfs:comment xml:lang="en">A payment between payee and payer for an amount. Otherwise known as a transaction.</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="https://lov.learndata.info/Intangible"/>
 		<rdfs:isDefinedBy rdf:resource="https://lov.learndata.info/Payment"/>
 	</owl:Class>
 	<owl:Class rdf:about="https://lov.learndata.info/Property">
-		<rdfs:subClassOf rdf:resource="https://lov.learndata.info/Intangible"/>
 		<rdfs:comment xml:lang="en">A property, used to indicate attributes and relationships of some Thing; equivalent to rdf:Property.</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="https://lov.learndata.info/Intangible"/>
 		<rdfs:label xml:lang="en">Property</rdfs:label>
 		<rdfs:isDefinedBy rdf:resource="https://lov.learndata.info/Property"/>
 	</owl:Class>
 	<owl:Class rdf:about="https://lov.learndata.info/Thing">
-		<rdfs:comment xml:lang="en">The most generic type of item.</rdfs:comment>
 		<rdfs:label xml:lang="en">Thing</rdfs:label>
+		<rdfs:comment xml:lang="en">The most generic type of item.</rdfs:comment>
 		<rdfs:isDefinedBy rdf:resource="https://lov.learndata.info/Thing"/>
 	</owl:Class>
 	<!--
@@ -48,8 +48,8 @@
 	/////////////////////
 	-->
 	<owl:DatatypeProperty rdf:about="https://lov.learndata.info/payee">
-		<rdfs:comment xml:lang="en">The entity to which the payment was made.</rdfs:comment>
 		<rdfs:label xml:lang="en">payee</rdfs:label>
+		<rdfs:comment xml:lang="en">The entity to which the payment was made.</rdfs:comment>
 		<rdfs:isDefinedBy rdf:resource="https://lov.learndata.info/payee"/>
 	</owl:DatatypeProperty>
 	<owl:DatatypeProperty rdf:about="https://lov.learndata.info/payer">
@@ -58,13 +58,13 @@
 		<rdfs:isDefinedBy rdf:resource="https://lov.learndata.info/payer"/>
 	</owl:DatatypeProperty>
 	<owl:DatatypeProperty rdf:about="https://lov.learndata.info/paymentDate">
-		<rdfs:comment xml:lang="en">The date the payment is deemed to have occurred.</rdfs:comment>
 		<rdfs:label xml:lang="en">payment date</rdfs:label>
+		<rdfs:comment xml:lang="en">The date the payment is deemed to have occurred.</rdfs:comment>
 		<rdfs:isDefinedBy rdf:resource="https://lov.learndata.info/paymentDate"/>
 	</owl:DatatypeProperty>
 	<owl:DatatypeProperty rdf:about="https://lov.learndata.info/referencesInvoice">
-		<rdfs:comment xml:lang="en">The invoice related to the payment</rdfs:comment>
 		<rdfs:label xml:lang="en">related invoice</rdfs:label>
+		<rdfs:comment xml:lang="en">The invoice related to the payment</rdfs:comment>
 		<rdfs:isDefinedBy rdf:resource="https://lov.learndata.info/referencesInvoice"/>
 	</owl:DatatypeProperty>
 	<!--

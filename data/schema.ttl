@@ -110,7 +110,7 @@ schema:mainEntityOfPage a rdf:Property ;
     rdfs:label "mainEntityOfPage" ;
     schema:domainIncludes :Thing ;
     schema:inverseOf schema:mainEntity ;
-    :rangeIncludes schema:CreativeWork,
+    schema:rangeIncludes schema:CreativeWork,
         schema:URL ;
     rdfs:comment "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details." .
 

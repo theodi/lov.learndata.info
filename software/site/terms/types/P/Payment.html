@@ -511,7 +511,19 @@
     
     <a href="https://schema.org/mainEntityOfPage" 
         class="core" title="https://schema.org/mainEntityOfPage">https://schema.org/mainEntityOfPage</a></code></th>
-            <td class="prop-ect"></td>
+            <td class="prop-ect">
+                
+    
+    
+    
+    <a href="https://schema.org/CreativeWork" 
+        class="core" title="https://schema.org/CreativeWork">https://schema.org/CreativeWork</a>&nbsp; or <br/>
+                
+    
+    
+    
+    <a href="https://schema.org/URL" 
+        class="core" title="https://schema.org/URL">https://schema.org/URL</a></td>
             <td class="prop-desc">Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See <a href="/docs/datamodel.html#mainEntityBackground">background notes</a> for details.
                 
                 
@@ -738,48 +750,161 @@
   },
   "@graph": [
     {
-      "@id": "schema1:Payment",
-      "@type": "rdfs:Class",
-      "rdfs:comment": "A payment between payee and payer for an amount. Otherwise known as a transaction.",
-      "rdfs:label": "Payment",
-      "rdfs:subClassOf": {
-        "@id": "schema1:Intangible"
+      "@id": "schema:additionalType",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the\n    use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href=\"https://schema.org/docs/styleguide.html\">style guide</a>.",
+      "rdfs:label": "additionalType",
+      "rdfs:subPropertyOf": {
+        "@id": "rdf:type"
+      },
+      "schema:domainIncludes": {
+        "@id": "schema1:Thing"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "schema:description",
+      "@type": "rdf:Property",
+      "owl:equivalentProperty": {
+        "@id": "dcterms:description"
+      },
+      "rdfs:comment": "A description of the item.",
+      "rdfs:label": "description",
+      "schema:domainIncludes": {
+        "@id": "schema1:Thing"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:TextObject"
+        }
+      ]
+    },
+    {
+      "@id": "schema1:referencesInvoice",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The invoice related to the payment",
+      "rdfs:label": "related invoice",
+      "schema:domainIncludes": {
+        "@id": "schema1:Payment"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Invoice"
       }
+    },
+    {
+      "@id": "schema:subjectOf",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A CreativeWork or Event about this Thing.",
+      "rdfs:label": "subjectOf",
+      "schema:domainIncludes": {
+        "@id": "schema1:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ]
+    },
+    {
+      "@id": "schema1:Intangible",
+      "@type": "rdfs:Class",
+      "owl:sameAs": {
+        "@id": "schema:Intangible"
+      },
+      "rdfs:comment": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
+      "rdfs:label": "Intangible",
+      "rdfs:subClassOf": {
+        "@id": "schema1:Thing"
+      },
+      "schema:sameAs": {
+        "@id": "schema:Intangible"
+      }
+    },
+    {
+      "@id": "schema:potentialAction",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
+      "rdfs:label": "potentialAction",
+      "schema:domainIncludes": {
+        "@id": "schema1:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Action"
+      }
+    },
+    {
+      "@id": "schema1:payer",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The entity to which the payment was made.",
+      "rdfs:label": "payee",
+      "schema:domainIncludes": {
+        "@id": "schema1:Payment"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Person"
+        }
+      ]
     },
     {
       "@id": "schema:mainEntityOfPage",
       "@type": "rdf:Property",
       "rdfs:comment": "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.",
       "rdfs:label": "mainEntityOfPage",
-      "schema1:rangeIncludes": [
-        {
-          "@id": "schema:URL"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        }
-      ],
       "schema:domainIncludes": {
         "@id": "schema1:Thing"
       },
       "schema:inverseOf": {
         "@id": "schema:mainEntity"
-      }
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
     },
     {
-      "@id": "schema1:paymentDate",
+      "@id": "schema1:payee",
       "@type": "rdf:Property",
-      "rdfs:comment": "The date the payment is deemed to have occurred.",
-      "rdfs:label": "payment date",
+      "rdfs:comment": "The entity to which the payment was made.",
+      "rdfs:label": "payee",
       "schema:domainIncludes": {
         "@id": "schema1:Payment"
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Date"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:DateTime"
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Person"
         }
       ]
     },
@@ -801,31 +926,21 @@
       ]
     },
     {
-      "@id": "schema:sameAs",
+      "@id": "schema1:paymentDate",
       "@type": "rdf:Property",
-      "rdfs:comment": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
-      "rdfs:label": "sameAs",
+      "rdfs:comment": "The date the payment is deemed to have occurred.",
+      "rdfs:label": "payment date",
       "schema:domainIncludes": {
-        "@id": "schema1:Thing"
+        "@id": "schema1:Payment"
       },
-      "schema:rangeIncludes": {
-        "@id": "schema:URL"
-      }
-    },
-    {
-      "@id": "schema1:Intangible",
-      "@type": "rdfs:Class",
-      "owl:sameAs": {
-        "@id": "schema:Intangible"
-      },
-      "rdfs:comment": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
-      "rdfs:label": "Intangible",
-      "rdfs:subClassOf": {
-        "@id": "schema1:Thing"
-      },
-      "schema:sameAs": {
-        "@id": "schema:Intangible"
-      }
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Date"
+        },
+        {
+          "@id": "schema:DateTime"
+        }
+      ]
     },
     {
       "@id": "schema:alternateName",
@@ -852,70 +967,6 @@
       }
     },
     {
-      "@id": "schema1:payee",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The entity to which the payment was made.",
-      "rdfs:label": "payee",
-      "schema:domainIncludes": {
-        "@id": "schema1:Payment"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Person"
-        },
-        {
-          "@id": "schema:Text"
-        }
-      ]
-    },
-    {
-      "@id": "schema:description",
-      "@type": "rdf:Property",
-      "owl:equivalentProperty": {
-        "@id": "dcterms:description"
-      },
-      "rdfs:comment": "A description of the item.",
-      "rdfs:label": "description",
-      "schema:domainIncludes": {
-        "@id": "schema1:Thing"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:TextObject"
-        },
-        {
-          "@id": "schema:Text"
-        }
-      ]
-    },
-    {
-      "@id": "schema1:referencesInvoice",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The invoice related to the payment",
-      "rdfs:label": "related invoice",
-      "schema:domainIncludes": {
-        "@id": "schema1:Payment"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Invoice"
-      }
-    },
-    {
-      "@id": "schema:potentialAction",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
-      "rdfs:label": "potentialAction",
-      "schema:domainIncludes": {
-        "@id": "schema1:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Action"
-      }
-    },
-    {
       "@id": "schema:url",
       "@type": "rdf:Property",
       "rdfs:comment": "URL of the item.",
@@ -928,24 +979,13 @@
       }
     },
     {
-      "@id": "schema:subjectOf",
-      "@type": "rdf:Property",
-      "rdfs:comment": "A CreativeWork or Event about this Thing.",
-      "rdfs:label": "subjectOf",
-      "schema:domainIncludes": {
-        "@id": "schema1:Thing"
-      },
-      "schema:inverseOf": {
-        "@id": "schema:about"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Event"
-        }
-      ]
+      "@id": "schema1:Payment",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A payment between payee and payer for an amount. Otherwise known as a transaction.",
+      "rdfs:label": "Payment",
+      "rdfs:subClassOf": {
+        "@id": "schema1:Intangible"
+      }
     },
     {
       "@id": "schema:disambiguatingDescription",
@@ -963,24 +1003,16 @@
       }
     },
     {
-      "@id": "schema1:payer",
+      "@id": "schema:sameAs",
       "@type": "rdf:Property",
-      "rdfs:comment": "The entity to which the payment was made.",
-      "rdfs:label": "payee",
+      "rdfs:comment": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
+      "rdfs:label": "sameAs",
       "schema:domainIncludes": {
-        "@id": "schema1:Payment"
+        "@id": "schema1:Thing"
       },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Person"
-        }
-      ]
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
+      }
     },
     {
       "@id": "schema:name",
@@ -1013,30 +1045,10 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:Text"
+        },
+        {
           "@id": "schema:PropertyValue"
-        },
-        {
-          "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:URL"
-        }
-      ]
-    },
-    {
-      "@id": "schema:additionalType",
-      "@type": "rdf:Property",
-      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the\n    use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href=\"https://schema.org/docs/styleguide.html\">style guide</a>.",
-      "rdfs:label": "additionalType",
-      "rdfs:subPropertyOf": {
-        "@id": "rdf:type"
-      },
-      "schema:domainIncludes": {
-        "@id": "schema1:Thing"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Text"
         },
         {
           "@id": "schema:URL"

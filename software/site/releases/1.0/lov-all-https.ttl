@@ -2,13 +2,67 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <http://schema.org/> .
+@prefix schema: <https://schema.org/> .
 @prefix schema1: <https://lov.learndata.info/> .
+
+schema1:Intangible a rdfs:Class ;
+    rdfs:label "Intangible" ;
+    rdfs:comment "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc." ;
+    rdfs:subClassOf schema1:Thing ;
+    owl:sameAs schema:Intangible ;
+    schema:sameAs schema:Intangible .
+
+schema1:Payment a rdfs:Class ;
+    rdfs:label "Payment" ;
+    rdfs:comment "A payment between payee and payer for an amount. Otherwise known as a transaction." ;
+    rdfs:subClassOf schema1:Intangible .
+
+schema1:Property a rdfs:Class ;
+    rdfs:label "Property" ;
+    rdfs:comment "A property, used to indicate attributes and relationships of some Thing; equivalent to rdf:Property." ;
+    rdfs:subClassOf schema1:Intangible ;
+    owl:equivalentClass rdf:Property ;
+    schema:isPartOf <https://meta.schema.org> .
+
+schema1:Thing a rdfs:Class ;
+    rdfs:label "Thing" ;
+    rdfs:comment "The most generic type of item." ;
+    owl:sameAs schema:Thing ;
+    schema:sameAs schema:Thing .
+
+schema1:payee a rdf:Property ;
+    rdfs:label "payee" ;
+    rdfs:comment "The entity to which the payment was made." ;
+    schema:domainIncludes schema1:Payment ;
+    schema:rangeIncludes schema:Organization,
+        schema:Person,
+        schema:Text .
+
+schema1:payer a rdf:Property ;
+    rdfs:label "payee" ;
+    rdfs:comment "The entity to which the payment was made." ;
+    schema:domainIncludes schema1:Payment ;
+    schema:rangeIncludes schema:Organization,
+        schema:Person,
+        schema:Text .
+
+schema1:paymentDate a rdf:Property ;
+    rdfs:label "payment date" ;
+    rdfs:comment "The date the payment is deemed to have occurred." ;
+    schema:domainIncludes schema1:Payment ;
+    schema:rangeIncludes schema:Date,
+        schema:DateTime .
+
+schema1:referencesInvoice a rdf:Property ;
+    rdfs:label "related invoice" ;
+    rdfs:comment "The invoice related to the payment" ;
+    schema:domainIncludes schema1:Payment ;
+    schema:rangeIncludes schema:Invoice .
 
 schema:additionalType a rdf:Property ;
     rdfs:label "additionalType" ;
     rdfs:comment """An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-    use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="http://schema.org/docs/styleguide.html">style guide</a>.""" ;
+    use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.""" ;
     rdfs:subPropertyOf rdf:type ;
     schema:domainIncludes schema1:Thing ;
     schema:rangeIncludes schema:Text,
@@ -55,10 +109,10 @@ schema:image a rdf:Property ;
 schema:mainEntityOfPage a rdf:Property ;
     rdfs:label "mainEntityOfPage" ;
     rdfs:comment "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details." ;
-    schema1:rangeIncludes schema:CreativeWork,
-        schema:URL ;
     schema:domainIncludes schema1:Thing ;
-    schema:inverseOf schema:mainEntity .
+    schema:inverseOf schema:mainEntity ;
+    schema:rangeIncludes schema:CreativeWork,
+        schema:URL .
 
 schema:name a rdf:Property ;
     rdfs:label "name" ;

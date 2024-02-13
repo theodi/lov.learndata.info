@@ -1,0 +1,42 @@
+{
+   "@context": {
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+      "schema": "https://schema.org",
+      "rdfs:subClassOf": {
+         "@type": "@id"
+      },
+      "description": "rdfs:comment",
+      "children": {
+         "@reverse": "rdfs:subClassOf"
+      }
+   },
+   "@type": "rdfs:Class",
+   "@id": "schema:Thing",
+   "name": "Thing",
+   "description": "The most generic type of item.",
+   "children": [
+      {
+         "@type": "rdfs:Class",
+         "@id": "schema:Intangible",
+         "name": "Intangible",
+         "rdfs:subClassOf": "schema:Thing",
+         "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
+         "children": [
+            {
+               "@type": "rdfs:Class",
+               "@id": "schema:Payment",
+               "name": "Payment",
+               "rdfs:subClassOf": "schema:Intangible",
+               "description": "A payment between payee and payer for an amount. Otherwise known as a transaction."
+            },
+            {
+               "@type": "rdfs:Class",
+               "@id": "schema:Property",
+               "name": "Property",
+               "rdfs:subClassOf": "schema:Intangible",
+               "description": "A property, used to indicate attributes and relationships of some Thing; equivalent to rdf:Property."
+            }
+         ]
+      }
+   ]
+}

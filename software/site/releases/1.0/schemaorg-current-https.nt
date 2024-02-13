@@ -1,0 +1,76 @@
+<https://schema.org/description> <https://schema.org/rangeIncludes> <https://schema.org/TextObject> .
+<https://schema.org/additionalType> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> .
+<https://schema.org/alternateName> <https://schema.org/rangeIncludes> <https://schema.org/Text> .
+<https://schema.org/sameAs> <https://schema.org/rangeIncludes> <https://schema.org/URL> .
+<https://schema.org/url> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<https://schema.org/disambiguatingDescription> <https://schema.org/domainIncludes> <https://lov.learndata.info/Thing> .
+<https://schema.org/name> <http://www.w3.org/2000/01/rdf-schema#comment> "The name of the item." .
+<https://schema.org/subjectOf> <https://schema.org/domainIncludes> <https://lov.learndata.info/Thing> .
+<https://schema.org/image> <http://www.w3.org/2000/01/rdf-schema#comment> "An image of the item. This can be a [[URL]] or a fully described [[ImageObject]]." .
+<https://schema.org/disambiguatingDescription> <http://www.w3.org/2000/01/rdf-schema#label> "disambiguatingDescription" .
+<https://schema.org/name> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://purl.org/dc/terms/title> .
+<https://schema.org/identifier> <https://schema.org/rangeIncludes> <https://schema.org/PropertyValue> .
+<https://schema.org/identifier> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://purl.org/dc/terms/identifier> .
+<https://schema.org/url> <http://www.w3.org/2000/01/rdf-schema#label> "url" .
+<https://schema.org/mainEntityOfPage> <https://schema.org/domainIncludes> <https://lov.learndata.info/Thing> .
+<https://schema.org/additionalType> <http://www.w3.org/2000/01/rdf-schema#comment> "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the\n    use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href=\"https://schema.org/docs/styleguide.html\">style guide</a>." .
+<https://schema.org/alternateName> <https://schema.org/domainIncludes> <https://lov.learndata.info/Thing> .
+<https://schema.org/sameAs> <http://www.w3.org/2000/01/rdf-schema#label> "sameAs" .
+<https://schema.org/description> <https://schema.org/domainIncludes> <https://lov.learndata.info/Thing> .
+<https://schema.org/description> <http://www.w3.org/2000/01/rdf-schema#comment> "A description of the item." .
+<https://schema.org/sameAs> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<https://schema.org/additionalType> <https://schema.org/domainIncludes> <https://lov.learndata.info/Thing> .
+<https://schema.org/disambiguatingDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<https://schema.org/subjectOf> <https://schema.org/inverseOf> <https://schema.org/about> .
+<https://schema.org/additionalType> <http://www.w3.org/2000/01/rdf-schema#label> "additionalType" .
+<https://schema.org/mainEntityOfPage> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details." .
+<https://schema.org/alternateName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<https://schema.org/url> <http://www.w3.org/2000/01/rdf-schema#comment> "URL of the item." .
+<https://schema.org/url> <https://schema.org/domainIncludes> <https://lov.learndata.info/Thing> .
+<https://schema.org/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<https://schema.org/potentialAction> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role." .
+<https://schema.org/mainEntityOfPage> <https://schema.org/inverseOf> <https://schema.org/mainEntity> .
+<https://schema.org/identifier> <https://schema.org/rangeIncludes> <https://schema.org/Text> .
+<https://schema.org/disambiguatingDescription> <https://schema.org/rangeIncludes> <https://schema.org/Text> .
+<https://schema.org/potentialAction> <https://schema.org/rangeIncludes> <https://schema.org/Action> .
+<https://schema.org/identifier> <https://schema.org/rangeIncludes> <https://schema.org/URL> .
+<https://schema.org/mainEntityOfPage> <https://lov.learndata.info/rangeIncludes> <https://schema.org/URL> .
+<https://schema.org/subjectOf> <http://www.w3.org/2000/01/rdf-schema#comment> "A CreativeWork or Event about this Thing." .
+<https://schema.org/image> <https://schema.org/rangeIncludes> <https://schema.org/ImageObject> .
+<https://schema.org/sameAs> <https://schema.org/domainIncludes> <https://lov.learndata.info/Thing> .
+<https://schema.org/identifier> <https://schema.org/domainIncludes> <https://lov.learndata.info/Thing> .
+<https://schema.org/disambiguatingDescription> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://lov.learndata.info/description> .
+<https://schema.org/additionalType> <https://schema.org/rangeIncludes> <https://schema.org/Text> .
+<https://schema.org/potentialAction> <http://www.w3.org/2000/01/rdf-schema#label> "potentialAction" .
+<https://schema.org/subjectOf> <https://schema.org/rangeIncludes> <https://schema.org/CreativeWork> .
+<https://schema.org/name> <https://schema.org/rangeIncludes> <https://schema.org/Text> .
+<https://schema.org/mainEntityOfPage> <http://www.w3.org/2000/01/rdf-schema#label> "mainEntityOfPage" .
+<https://schema.org/additionalType> <https://schema.org/rangeIncludes> <https://schema.org/URL> .
+<https://schema.org/image> <https://schema.org/rangeIncludes> <https://schema.org/URL> .
+<https://schema.org/subjectOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<https://schema.org/mainEntityOfPage> <https://lov.learndata.info/rangeIncludes> <https://schema.org/CreativeWork> .
+<https://schema.org/sameAs> <http://www.w3.org/2000/01/rdf-schema#comment> "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website." .
+<https://schema.org/potentialAction> <https://schema.org/domainIncludes> <https://lov.learndata.info/Thing> .
+<https://schema.org/image> <http://www.w3.org/2000/01/rdf-schema#label> "image" .
+<https://schema.org/image> <https://schema.org/domainIncludes> <https://lov.learndata.info/Thing> .
+<https://schema.org/name> <https://schema.org/domainIncludes> <https://lov.learndata.info/Thing> .
+<https://schema.org/url> <https://schema.org/rangeIncludes> <https://schema.org/URL> .
+<https://schema.org/identifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<https://schema.org/description> <http://www.w3.org/2000/01/rdf-schema#label> "description" .
+<https://schema.org/mainEntityOfPage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<https://schema.org/identifier> <http://www.w3.org/2000/01/rdf-schema#label> "identifier" .
+<https://schema.org/name> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2000/01/rdf-schema#label> .
+<https://schema.org/alternateName> <http://www.w3.org/2000/01/rdf-schema#label> "alternateName" .
+<https://schema.org/identifier> <http://www.w3.org/2000/01/rdf-schema#comment> "The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.\n        " .
+<https://schema.org/potentialAction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<https://schema.org/subjectOf> <http://www.w3.org/2000/01/rdf-schema#label> "subjectOf" .
+<https://schema.org/subjectOf> <https://schema.org/rangeIncludes> <https://schema.org/Event> .
+<https://schema.org/name> <http://www.w3.org/2000/01/rdf-schema#label> "name" .
+<https://schema.org/alternateName> <http://www.w3.org/2000/01/rdf-schema#comment> "An alias for the item." .
+<https://schema.org/description> <https://schema.org/rangeIncludes> <https://schema.org/Text> .
+<https://schema.org/disambiguatingDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation." .
+<https://schema.org/additionalType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<https://schema.org/image> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<https://schema.org/description> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://purl.org/dc/terms/description> .
+<https://schema.org/name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+

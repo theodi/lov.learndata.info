@@ -8,6 +8,7 @@ paymentDate p
 referencesInvoice p
 https://schema.org/additionalType p
 https://schema.org/alternateName p
+https://schema.org/amount p
 https://schema.org/description p
 https://schema.org/disambiguatingDescription p
 https://schema.org/identifier p

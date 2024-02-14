@@ -10,7 +10,8 @@
 :Payment a rdfs:Class ;
 	rdfs:comment "A payment between payee and payer for an amount. Otherwise known as a transaction." ;
 	rdfs:label "Payment" ;
-	rdfs:subClassOf :Intangible .
+	rdfs:subClassOf :Intangible ;
+    schema:sameAs :Transaction .
 
 :paymentDate a rdf:Property ;
 	rdfs:comment "The date the payment is deemed to have occurred." ;
@@ -40,6 +41,16 @@
 	schema:domainIncludes :Payment  ;
 	rdfs:label "related invoice" ;
 	schema:rangeIncludes schema:Invoice .
+
+schema:amount a rdf:Property ;
+    rdfs:label "amount" ;
+    schema:domainIncludes schema:DatedMoneySpecification,
+        schema:InvestmentOrDeposit,
+        schema:LoanOrCredit,
+        :Payment ;
+    schema:rangeIncludes schema:MonetaryAmount,
+        schema:Number ;
+    rdfs:comment "The amount of money." .
 
 schema:identifier a rdf:Property ;
     rdfs:label "identifier" ;

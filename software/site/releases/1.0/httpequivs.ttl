@@ -14,6 +14,8 @@ schema_p:Thing owl:equivalentClass schema_s:Thing .
 
 <http://schema.org/https://schema.org/alternateName> owl:equivalentProperty <https://schema.org/https://schema.org/alternateName> .
 
+<http://schema.org/https://schema.org/amount> owl:equivalentProperty <https://schema.org/https://schema.org/amount> .
+
 <http://schema.org/https://schema.org/description> owl:equivalentProperty <https://schema.org/https://schema.org/description> .
 
 <http://schema.org/https://schema.org/disambiguatingDescription> owl:equivalentProperty <https://schema.org/https://schema.org/disambiguatingDescription> .
@@ -53,6 +55,8 @@ schema_s:Thing owl:equivalentClass schema_p:Thing .
 <https://schema.org/https://schema.org/additionalType> owl:equivalentProperty <http://schema.org/https://schema.org/additionalType> .
 
 <https://schema.org/https://schema.org/alternateName> owl:equivalentProperty <http://schema.org/https://schema.org/alternateName> .
+
+<https://schema.org/https://schema.org/amount> owl:equivalentProperty <http://schema.org/https://schema.org/amount> .
 
 <https://schema.org/https://schema.org/description> owl:equivalentProperty <http://schema.org/https://schema.org/description> .
 

@@ -1,122 +1,132 @@
-<http://schema.org/alternateName> <http://www.w3.org/2000/01/rdf-schema#label> "alternateName" .
-<http://schema.org/subjectOf> <http://schema.org/rangeIncludes> <http://schema.org/Event> .
-<http://schema.org/potentialAction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
-<http://schema.org/subjectOf> <http://schema.org/domainIncludes> <https://lov.learndata.info/Thing> .
-<http://schema.org/name> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2000/01/rdf-schema#label> .
-<http://schema.org/url> <http://www.w3.org/2000/01/rdf-schema#label> "url" .
-<https://lov.learndata.info/payee> <http://www.w3.org/2000/01/rdf-schema#label> "payee" .
-<https://lov.learndata.info/referencesInvoice> <http://schema.org/domainIncludes> <https://lov.learndata.info/Payment> .
-<http://schema.org/identifier> <http://www.w3.org/2000/01/rdf-schema#label> "identifier" .
-<https://lov.learndata.info/Payment> <http://www.w3.org/2000/01/rdf-schema#label> "Payment" .
-<http://schema.org/additionalType> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> .
-<http://schema.org/description> <http://schema.org/rangeIncludes> <http://schema.org/Text> .
-<http://schema.org/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
-<http://schema.org/name> <http://www.w3.org/2000/01/rdf-schema#comment> "The name of the item." .
-<http://schema.org/disambiguatingDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
-<http://schema.org/sameAs> <http://schema.org/rangeIncludes> <http://schema.org/URL> .
-<http://schema.org/alternateName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
-<https://lov.learndata.info/paymentDate> <http://schema.org/rangeIncludes> <http://schema.org/Date> .
-<http://schema.org/image> <http://www.w3.org/2000/01/rdf-schema#label> "image" .
-<http://schema.org/subjectOf> <http://www.w3.org/2000/01/rdf-schema#comment> "A CreativeWork or Event about this Thing." .
-<https://lov.learndata.info/Payment> <http://www.w3.org/2000/01/rdf-schema#comment> "A payment between payee and payer for an amount. Otherwise known as a transaction." .
-<https://lov.learndata.info/referencesInvoice> <http://www.w3.org/2000/01/rdf-schema#label> "related invoice" .
-<http://schema.org/mainEntityOfPage> <http://schema.org/domainIncludes> <https://lov.learndata.info/Thing> .
-<http://schema.org/mainEntityOfPage> <http://schema.org/rangeIncludes> <http://schema.org/CreativeWork> .
-<http://schema.org/additionalType> <http://www.w3.org/2000/01/rdf-schema#label> "additionalType" .
-<http://schema.org/url> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
-<http://schema.org/additionalType> <http://schema.org/domainIncludes> <https://lov.learndata.info/Thing> .
-<https://lov.learndata.info/Thing> <http://www.w3.org/2000/01/rdf-schema#label> "Thing" .
-<http://schema.org/disambiguatingDescription> <http://schema.org/rangeIncludes> <http://schema.org/Text> .
-<https://lov.learndata.info/Intangible> <http://schema.org/sameAs> <http://schema.org/Intangible> .
-<https://lov.learndata.info/Property> <http://www.w3.org/2000/01/rdf-schema#comment> "A property, used to indicate attributes and relationships of some Thing; equivalent to rdf:Property." .
-<https://lov.learndata.info/Property> <http://www.w3.org/2002/07/owl#equivalentClass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
-<https://lov.learndata.info/Property> <http://schema.org/isPartOf> <http://meta.schema.org> .
-<http://schema.org/additionalType> <http://www.w3.org/2000/01/rdf-schema#comment> "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the\n    use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href=\"http://schema.org/docs/styleguide.html\">style guide</a>." .
-<https://lov.learndata.info/paymentDate> <http://schema.org/domainIncludes> <https://lov.learndata.info/Payment> .
-<https://lov.learndata.info/referencesInvoice> <http://www.w3.org/2000/01/rdf-schema#comment> "The invoice related to the payment" .
-<https://lov.learndata.info/Thing> <http://www.w3.org/2002/07/owl#sameAs> <http://schema.org/Thing> .
-<https://lov.learndata.info/Thing> <http://www.w3.org/2000/01/rdf-schema#comment> "The most generic type of item." .
-<http://schema.org/subjectOf> <http://schema.org/inverseOf> <http://schema.org/about> .
-<http://schema.org/identifier> <http://www.w3.org/2000/01/rdf-schema#comment> "The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.\n        " .
-<https://lov.learndata.info/payee> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
-<http://schema.org/url> <http://schema.org/domainIncludes> <https://lov.learndata.info/Thing> .
-<https://lov.learndata.info/referencesInvoice> <http://schema.org/rangeIncludes> <http://schema.org/Invoice> .
-<https://lov.learndata.info/paymentDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
-<http://schema.org/mainEntityOfPage> <http://www.w3.org/2000/01/rdf-schema#label> "mainEntityOfPage" .
-<https://lov.learndata.info/Thing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
-<https://lov.learndata.info/payer> <http://www.w3.org/2000/01/rdf-schema#label> "payee" .
-<https://lov.learndata.info/Property> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
-<http://schema.org/description> <http://schema.org/domainIncludes> <https://lov.learndata.info/Thing> .
-<http://schema.org/name> <http://schema.org/domainIncludes> <https://lov.learndata.info/Thing> .
-<http://schema.org/identifier> <http://schema.org/rangeIncludes> <http://schema.org/Text> .
-<https://lov.learndata.info/Payment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://lov.learndata.info/Intangible> .
-<http://schema.org/identifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
-<http://schema.org/description> <http://www.w3.org/2000/01/rdf-schema#label> "description" .
-<https://lov.learndata.info/payer> <http://schema.org/rangeIncludes> <http://schema.org/Text> .
-<http://schema.org/description> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://purl.org/dc/terms/description> .
-<http://schema.org/image> <http://www.w3.org/2000/01/rdf-schema#comment> "An image of the item. This can be a [[URL]] or a fully described [[ImageObject]]." .
-<http://schema.org/url> <http://schema.org/rangeIncludes> <http://schema.org/URL> .
-<https://lov.learndata.info/Intangible> <http://www.w3.org/2000/01/rdf-schema#comment> "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc." .
-<http://schema.org/potentialAction> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role." .
-<https://lov.learndata.info/payer> <http://schema.org/rangeIncludes> <http://schema.org/Organization> .
-<http://schema.org/sameAs> <http://schema.org/domainIncludes> <https://lov.learndata.info/Thing> .
-<http://schema.org/additionalType> <http://schema.org/rangeIncludes> <http://schema.org/Text> .
-<http://schema.org/additionalType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
-<http://schema.org/potentialAction> <http://schema.org/rangeIncludes> <http://schema.org/Action> .
-<http://schema.org/subjectOf> <http://schema.org/rangeIncludes> <http://schema.org/CreativeWork> .
-<https://lov.learndata.info/payer> <http://schema.org/rangeIncludes> <http://schema.org/Person> .
-<http://schema.org/identifier> <http://schema.org/rangeIncludes> <http://schema.org/PropertyValue> .
-<https://lov.learndata.info/referencesInvoice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
-<https://lov.learndata.info/Intangible> <http://www.w3.org/2002/07/owl#sameAs> <http://schema.org/Intangible> .
-<http://schema.org/description> <http://schema.org/rangeIncludes> <http://schema.org/TextObject> .
-<http://schema.org/description> <http://www.w3.org/2000/01/rdf-schema#comment> "A description of the item." .
-<https://lov.learndata.info/payee> <http://www.w3.org/2000/01/rdf-schema#comment> "The entity to which the payment was made." .
-<http://schema.org/identifier> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://purl.org/dc/terms/identifier> .
-<http://schema.org/identifier> <http://schema.org/domainIncludes> <https://lov.learndata.info/Thing> .
-<http://schema.org/name> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://purl.org/dc/terms/title> .
-<http://schema.org/disambiguatingDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation." .
-<http://schema.org/disambiguatingDescription> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://lov.learndata.info/description> .
-<http://schema.org/subjectOf> <http://www.w3.org/2000/01/rdf-schema#label> "subjectOf" .
 <https://lov.learndata.info/paymentDate> <http://schema.org/rangeIncludes> <http://schema.org/DateTime> .
-<http://schema.org/identifier> <http://schema.org/rangeIncludes> <http://schema.org/URL> .
-<http://schema.org/disambiguatingDescription> <http://www.w3.org/2000/01/rdf-schema#label> "disambiguatingDescription" .
-<http://schema.org/name> <http://schema.org/rangeIncludes> <http://schema.org/Text> .
-<http://schema.org/alternateName> <http://www.w3.org/2000/01/rdf-schema#comment> "An alias for the item." .
-<http://schema.org/potentialAction> <http://schema.org/domainIncludes> <https://lov.learndata.info/Thing> .
-<http://schema.org/image> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
-<https://lov.learndata.info/payee> <http://schema.org/rangeIncludes> <http://schema.org/Text> .
-<http://schema.org/alternateName> <http://schema.org/rangeIncludes> <http://schema.org/Text> .
-<https://lov.learndata.info/Intangible> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://lov.learndata.info/Thing> .
-<http://schema.org/name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
-<https://lov.learndata.info/Payment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
-<http://schema.org/mainEntityOfPage> <http://schema.org/inverseOf> <http://schema.org/mainEntity> .
-<https://lov.learndata.info/payee> <http://schema.org/rangeIncludes> <http://schema.org/Organization> .
-<https://lov.learndata.info/payee> <http://schema.org/domainIncludes> <https://lov.learndata.info/Payment> .
+<http://schema.org/image> <http://schema.org/rangeIncludes> <http://schema.org/ImageObject> .
+<https://lov.learndata.info/paymentDate> <http://schema.org/rangeIncludes> <http://schema.org/Date> .
 <https://lov.learndata.info/payee> <http://schema.org/rangeIncludes> <http://schema.org/Person> .
-<http://schema.org/mainEntityOfPage> <http://schema.org/rangeIncludes> <http://schema.org/URL> .
-<http://schema.org/image> <http://schema.org/domainIncludes> <https://lov.learndata.info/Thing> .
-<http://schema.org/sameAs> <http://www.w3.org/2000/01/rdf-schema#label> "sameAs" .
-<http://schema.org/alternateName> <http://schema.org/domainIncludes> <https://lov.learndata.info/Thing> .
+<http://schema.org/name> <http://schema.org/rangeIncludes> <http://schema.org/Text> .
+<http://schema.org/image> <http://www.w3.org/2000/01/rdf-schema#label> "image" .
 <http://schema.org/additionalType> <http://schema.org/rangeIncludes> <http://schema.org/URL> .
+<https://lov.learndata.info/Property> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://lov.learndata.info/Intangible> .
+<http://schema.org/description> <http://schema.org/rangeIncludes> <http://schema.org/TextObject> .
+<http://schema.org/description> <http://www.w3.org/2000/01/rdf-schema#label> "description" .
+<http://schema.org/disambiguatingDescription> <http://www.w3.org/2000/01/rdf-schema#label> "disambiguatingDescription" .
+<https://lov.learndata.info/Intangible> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://schema.org/sameAs> <http://schema.org/rangeIncludes> <http://schema.org/URL> .
+<http://schema.org/alternateName> <http://www.w3.org/2000/01/rdf-schema#label> "alternateName" .
+<http://schema.org/mainEntityOfPage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<https://lov.learndata.info/Payment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://schema.org/amount> <http://www.w3.org/2000/01/rdf-schema#comment> "The amount of money." .
+<http://schema.org/additionalType> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> .
+<http://schema.org/mainEntityOfPage> <http://schema.org/inverseOf> <http://schema.org/mainEntity> .
+<http://schema.org/amount> <http://schema.org/domainIncludes> <http://schema.org/InvestmentOrDeposit> .
+<https://lov.learndata.info/payer> <http://schema.org/rangeIncludes> <http://schema.org/Organization> .
+<http://schema.org/identifier> <http://schema.org/rangeIncludes> <http://schema.org/PropertyValue> .
+<http://schema.org/description> <http://www.w3.org/2000/01/rdf-schema#comment> "A description of the item." .
+<http://schema.org/additionalType> <http://www.w3.org/2000/01/rdf-schema#comment> "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the\n    use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href=\"http://schema.org/docs/styleguide.html\">style guide</a>." .
+<http://schema.org/alternateName> <http://schema.org/domainIncludes> <https://lov.learndata.info/Thing> .
+<https://lov.learndata.info/payer> <http://schema.org/rangeIncludes> <http://schema.org/Text> .
+<http://schema.org/name> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://purl.org/dc/terms/title> .
+<http://schema.org/identifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://schema.org/description> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://purl.org/dc/terms/description> .
+<http://schema.org/amount> <http://schema.org/domainIncludes> <https://lov.learndata.info/Payment> .
+<http://schema.org/disambiguatingDescription> <http://schema.org/rangeIncludes> <http://schema.org/Text> .
+<https://lov.learndata.info/Intangible> <http://www.w3.org/2002/07/owl#sameAs> <http://schema.org/Intangible> .
+<http://schema.org/amount> <http://schema.org/domainIncludes> <http://schema.org/LoanOrCredit> .
+<http://schema.org/potentialAction> <http://schema.org/domainIncludes> <https://lov.learndata.info/Thing> .
+<http://schema.org/description> <http://schema.org/rangeIncludes> <http://schema.org/Text> .
+<http://schema.org/identifier> <http://schema.org/rangeIncludes> <http://schema.org/Text> .
+<http://schema.org/mainEntityOfPage> <http://schema.org/rangeIncludes> <http://schema.org/CreativeWork> .
+<https://lov.learndata.info/Property> <http://www.w3.org/2000/01/rdf-schema#label> "Property" .
+<http://schema.org/potentialAction> <http://www.w3.org/2000/01/rdf-schema#label> "potentialAction" .
+<http://schema.org/name> <http://www.w3.org/2000/01/rdf-schema#comment> "The name of the item." .
+<http://schema.org/image> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://schema.org/mainEntityOfPage> <http://www.w3.org/2000/01/rdf-schema#label> "mainEntityOfPage" .
+<https://lov.learndata.info/Payment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://lov.learndata.info/Intangible> .
+<https://lov.learndata.info/paymentDate> <http://www.w3.org/2000/01/rdf-schema#comment> "The date the payment is deemed to have occurred." .
+<https://lov.learndata.info/payee> <http://www.w3.org/2000/01/rdf-schema#comment> "The entity to which the payment was made." .
+<https://lov.learndata.info/payee> <http://www.w3.org/2000/01/rdf-schema#label> "payee" .
+<https://lov.learndata.info/referencesInvoice> <http://www.w3.org/2000/01/rdf-schema#label> "related invoice" .
+<https://lov.learndata.info/payer> <http://schema.org/rangeIncludes> <http://schema.org/Person> .
 <https://lov.learndata.info/payer> <http://www.w3.org/2000/01/rdf-schema#comment> "The entity to which the payment was made." .
+<http://schema.org/identifier> <http://schema.org/rangeIncludes> <http://schema.org/URL> .
+<https://lov.learndata.info/Thing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<https://lov.learndata.info/Property> <http://schema.org/isPartOf> <http://meta.schema.org> .
+<http://schema.org/amount> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<https://lov.learndata.info/Intangible> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://lov.learndata.info/Thing> .
+<https://lov.learndata.info/Payment> <http://www.w3.org/2000/01/rdf-schema#label> "Payment" .
+<http://schema.org/url> <http://www.w3.org/2000/01/rdf-schema#label> "url" .
+<http://schema.org/potentialAction> <http://schema.org/rangeIncludes> <http://schema.org/Action> .
+<http://schema.org/amount> <http://schema.org/rangeIncludes> <http://schema.org/MonetaryAmount> .
+<http://schema.org/identifier> <http://schema.org/domainIncludes> <https://lov.learndata.info/Thing> .
+<https://lov.learndata.info/payer> <http://www.w3.org/2000/01/rdf-schema#label> "payee" .
+<http://schema.org/disambiguatingDescription> <http://schema.org/domainIncludes> <https://lov.learndata.info/Thing> .
+<http://schema.org/potentialAction> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role." .
+<http://schema.org/identifier> <http://www.w3.org/2000/01/rdf-schema#label> "identifier" .
+<http://schema.org/identifier> <http://www.w3.org/2000/01/rdf-schema#comment> "The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.\n        " .
+<http://schema.org/name> <http://schema.org/domainIncludes> <https://lov.learndata.info/Thing> .
+<http://schema.org/alternateName> <http://www.w3.org/2000/01/rdf-schema#comment> "An alias for the item." .
+<https://lov.learndata.info/Intangible> <http://www.w3.org/2000/01/rdf-schema#label> "Intangible" .
+<http://schema.org/additionalType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://schema.org/subjectOf> <http://www.w3.org/2000/01/rdf-schema#label> "subjectOf" .
+<https://lov.learndata.info/Thing> <http://www.w3.org/2000/01/rdf-schema#comment> "The most generic type of item." .
+<http://schema.org/mainEntityOfPage> <http://schema.org/rangeIncludes> <http://schema.org/URL> .
+<http://schema.org/url> <http://schema.org/domainIncludes> <https://lov.learndata.info/Thing> .
+<https://lov.learndata.info/payee> <http://schema.org/domainIncludes> <https://lov.learndata.info/Payment> .
+<https://lov.learndata.info/referencesInvoice> <http://www.w3.org/2000/01/rdf-schema#comment> "The invoice related to the payment" .
+<http://schema.org/image> <http://schema.org/domainIncludes> <https://lov.learndata.info/Thing> .
+<http://schema.org/mainEntityOfPage> <http://schema.org/domainIncludes> <https://lov.learndata.info/Thing> .
+<http://schema.org/disambiguatingDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation." .
 <http://schema.org/sameAs> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
 <https://lov.learndata.info/payer> <http://schema.org/domainIncludes> <https://lov.learndata.info/Payment> .
-<http://schema.org/subjectOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
-<https://lov.learndata.info/Property> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://lov.learndata.info/Intangible> .
-<https://lov.learndata.info/Intangible> <http://www.w3.org/2000/01/rdf-schema#label> "Intangible" .
-<http://schema.org/image> <http://schema.org/rangeIncludes> <http://schema.org/ImageObject> .
-<http://schema.org/disambiguatingDescription> <http://schema.org/domainIncludes> <https://lov.learndata.info/Thing> .
-<http://schema.org/name> <http://www.w3.org/2000/01/rdf-schema#label> "name" .
-<https://lov.learndata.info/payer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
-<https://lov.learndata.info/Thing> <http://schema.org/sameAs> <http://schema.org/Thing> .
-<https://lov.learndata.info/Intangible> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
-<http://schema.org/url> <http://www.w3.org/2000/01/rdf-schema#comment> "URL of the item." .
-<http://schema.org/sameAs> <http://www.w3.org/2000/01/rdf-schema#comment> "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website." .
-<https://lov.learndata.info/Property> <http://www.w3.org/2000/01/rdf-schema#label> "Property" .
-<http://schema.org/mainEntityOfPage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
-<https://lov.learndata.info/paymentDate> <http://www.w3.org/2000/01/rdf-schema#label> "payment date" .
-<https://lov.learndata.info/paymentDate> <http://www.w3.org/2000/01/rdf-schema#comment> "The date the payment is deemed to have occurred." .
+<https://lov.learndata.info/referencesInvoice> <http://schema.org/rangeIncludes> <http://schema.org/Invoice> .
+<https://lov.learndata.info/referencesInvoice> <http://schema.org/domainIncludes> <https://lov.learndata.info/Payment> .
+<http://schema.org/additionalType> <http://schema.org/rangeIncludes> <http://schema.org/Text> .
 <http://schema.org/mainEntityOfPage> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details." .
+<http://schema.org/subjectOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://schema.org/subjectOf> <http://www.w3.org/2000/01/rdf-schema#comment> "A CreativeWork or Event about this Thing." .
+<https://lov.learndata.info/Payment> <http://www.w3.org/2000/01/rdf-schema#comment> "A payment between payee and payer for an amount. Otherwise known as a transaction." .
+<http://schema.org/name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://schema.org/alternateName> <http://schema.org/rangeIncludes> <http://schema.org/Text> .
+<http://schema.org/description> <http://schema.org/domainIncludes> <https://lov.learndata.info/Thing> .
+<http://schema.org/potentialAction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://schema.org/additionalType> <http://www.w3.org/2000/01/rdf-schema#label> "additionalType" .
+<https://lov.learndata.info/payee> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<https://lov.learndata.info/Thing> <http://schema.org/sameAs> <http://schema.org/Thing> .
+<http://schema.org/url> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://schema.org/identifier> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://purl.org/dc/terms/identifier> .
+<http://schema.org/url> <http://schema.org/rangeIncludes> <http://schema.org/URL> .
+<https://lov.learndata.info/payee> <http://schema.org/rangeIncludes> <http://schema.org/Organization> .
+<http://schema.org/url> <http://www.w3.org/2000/01/rdf-schema#comment> "URL of the item." .
+<https://lov.learndata.info/paymentDate> <http://schema.org/domainIncludes> <https://lov.learndata.info/Payment> .
 <http://schema.org/image> <http://schema.org/rangeIncludes> <http://schema.org/URL> .
-<http://schema.org/potentialAction> <http://www.w3.org/2000/01/rdf-schema#label> "potentialAction" .
+<http://schema.org/additionalType> <http://schema.org/domainIncludes> <https://lov.learndata.info/Thing> .
+<https://lov.learndata.info/payer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<https://lov.learndata.info/Intangible> <http://www.w3.org/2000/01/rdf-schema#comment> "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc." .
+<https://lov.learndata.info/payee> <http://schema.org/rangeIncludes> <http://schema.org/Text> .
+<http://schema.org/amount> <http://schema.org/domainIncludes> <http://schema.org/DatedMoneySpecification> .
+<https://lov.learndata.info/Property> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<https://lov.learndata.info/Payment> <http://schema.org/sameAs> <https://lov.learndata.info/Transaction> .
+<https://lov.learndata.info/referencesInvoice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://schema.org/subjectOf> <http://schema.org/rangeIncludes> <http://schema.org/Event> .
+<http://schema.org/alternateName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://schema.org/disambiguatingDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://schema.org/amount> <http://www.w3.org/2000/01/rdf-schema#label> "amount" .
+<https://lov.learndata.info/paymentDate> <http://www.w3.org/2000/01/rdf-schema#label> "payment date" .
+<http://schema.org/sameAs> <http://schema.org/domainIncludes> <https://lov.learndata.info/Thing> .
+<http://schema.org/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://schema.org/name> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2000/01/rdf-schema#label> .
+<https://lov.learndata.info/Property> <http://www.w3.org/2000/01/rdf-schema#comment> "A property, used to indicate attributes and relationships of some Thing; equivalent to rdf:Property." .
+<http://schema.org/subjectOf> <http://schema.org/rangeIncludes> <http://schema.org/CreativeWork> .
+<http://schema.org/subjectOf> <http://schema.org/inverseOf> <http://schema.org/about> .
+<https://lov.learndata.info/Property> <http://www.w3.org/2002/07/owl#equivalentClass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://schema.org/name> <http://www.w3.org/2000/01/rdf-schema#label> "name" .
+<https://lov.learndata.info/paymentDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<http://schema.org/sameAs> <http://www.w3.org/2000/01/rdf-schema#label> "sameAs" .
+<http://schema.org/image> <http://www.w3.org/2000/01/rdf-schema#comment> "An image of the item. This can be a [[URL]] or a fully described [[ImageObject]]." .
+<http://schema.org/subjectOf> <http://schema.org/domainIncludes> <https://lov.learndata.info/Thing> .
+<https://lov.learndata.info/Thing> <http://www.w3.org/2002/07/owl#sameAs> <http://schema.org/Thing> .
+<http://schema.org/amount> <http://schema.org/rangeIncludes> <http://schema.org/Number> .
+<https://lov.learndata.info/Intangible> <http://schema.org/sameAs> <http://schema.org/Intangible> .
+<http://schema.org/disambiguatingDescription> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://lov.learndata.info/description> .
+<http://schema.org/sameAs> <http://www.w3.org/2000/01/rdf-schema#comment> "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website." .
+<https://lov.learndata.info/Thing> <http://www.w3.org/2000/01/rdf-schema#label> "Thing" .
 

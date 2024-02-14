@@ -15,7 +15,8 @@ schema1:Intangible a rdfs:Class ;
 schema1:Payment a rdfs:Class ;
     rdfs:label "Payment" ;
     rdfs:comment "A payment between payee and payer for an amount. Otherwise known as a transaction." ;
-    rdfs:subClassOf schema1:Intangible .
+    rdfs:subClassOf schema1:Intangible ;
+    schema:sameAs schema1:Transaction .
 
 schema1:Property a rdfs:Class ;
     rdfs:label "Property" ;
@@ -73,6 +74,16 @@ schema:alternateName a rdf:Property ;
     rdfs:comment "An alias for the item." ;
     schema:domainIncludes schema1:Thing ;
     schema:rangeIncludes schema:Text .
+
+schema:amount a rdf:Property ;
+    rdfs:label "amount" ;
+    rdfs:comment "The amount of money." ;
+    schema:domainIncludes schema1:Payment,
+        schema:DatedMoneySpecification,
+        schema:InvestmentOrDeposit,
+        schema:LoanOrCredit ;
+    schema:rangeIncludes schema:MonetaryAmount,
+        schema:Number .
 
 schema:description a rdf:Property ;
     rdfs:label "description" ;

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rdf:RDF xmlns="https://lov.learndata.info/" xmlns:schema="https://lov.learndata.info/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xml:base="https://lov.learndata.info/">
+<rdf:RDF xmlns="https://schema.learndata.info/" xmlns:schema="https://schema.learndata.info/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xml:base="https://schema.learndata.info/">
 	<!--
 	Generated from Schema.org version: 1.0 released: 2024-02-13
 	-->
-	<owl:Ontology rdf:about="https://lov.learndata.info/">
+	<owl:Ontology rdf:about="https://schema.learndata.info/">
 		<owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.0</owl:versionInfo>
 		<rdfs:label>Schema.org Vocabulary</rdfs:label>
 		<dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-02-13</dcterms:modified>
@@ -19,63 +19,63 @@
 	/ Class Definitions
 	/////////////////////
 	-->
-	<owl:Class rdf:about="https://lov.learndata.info/Intangible">
-		<rdfs:subClassOf rdf:resource="https://lov.learndata.info/Thing"/>
-		<rdfs:label xml:lang="en">Intangible</rdfs:label>
+	<owl:Class rdf:about="https://schema.learndata.info/Intangible">
 		<rdfs:comment xml:lang="en">A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.</rdfs:comment>
-		<rdfs:isDefinedBy rdf:resource="https://lov.learndata.info/Intangible"/>
+		<rdfs:label xml:lang="en">Intangible</rdfs:label>
+		<rdfs:subClassOf rdf:resource="https://schema.learndata.info/Thing"/>
+		<rdfs:isDefinedBy rdf:resource="https://schema.learndata.info//Intangible"/>
 	</owl:Class>
-	<owl:Class rdf:about="https://lov.learndata.info/Payment">
-		<rdfs:subClassOf rdf:resource="https://lov.learndata.info/Intangible"/>
-		<rdfs:label xml:lang="en">Payment</rdfs:label>
+	<owl:Class rdf:about="https://schema.learndata.info/Payment">
+		<rdfs:subClassOf rdf:resource="https://schema.learndata.info/Intangible"/>
 		<rdfs:comment xml:lang="en">A payment between payee and payer for an amount. Otherwise known as a transaction.</rdfs:comment>
-		<rdfs:isDefinedBy rdf:resource="https://lov.learndata.info/Payment"/>
+		<rdfs:label xml:lang="en">Payment</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="https://schema.learndata.info//Payment"/>
 	</owl:Class>
-	<owl:Class rdf:about="https://lov.learndata.info/Property">
-		<rdfs:subClassOf rdf:resource="https://lov.learndata.info/Intangible"/>
+	<owl:Class rdf:about="https://schema.learndata.info/Property">
 		<rdfs:label xml:lang="en">Property</rdfs:label>
+		<rdfs:subClassOf rdf:resource="https://schema.learndata.info/Intangible"/>
 		<rdfs:comment xml:lang="en">A property, used to indicate attributes and relationships of some Thing; equivalent to rdf:Property.</rdfs:comment>
-		<rdfs:isDefinedBy rdf:resource="https://lov.learndata.info/Property"/>
+		<rdfs:isDefinedBy rdf:resource="https://schema.learndata.info//Property"/>
 	</owl:Class>
-	<owl:Class rdf:about="https://lov.learndata.info/Thing">
+	<owl:Class rdf:about="https://schema.learndata.info/Thing">
 		<rdfs:comment xml:lang="en">The most generic type of item.</rdfs:comment>
 		<rdfs:label xml:lang="en">Thing</rdfs:label>
-		<rdfs:isDefinedBy rdf:resource="https://lov.learndata.info/Thing"/>
+		<rdfs:isDefinedBy rdf:resource="https://schema.learndata.info//Thing"/>
 	</owl:Class>
 	<!--
 	/////////////////////
 	/ Property Definitions
 	/////////////////////
 	-->
-	<owl:DatatypeProperty rdf:about="https://lov.learndata.info/payee">
+	<owl:DatatypeProperty rdf:about="https://schema.learndata.info/payee">
 		<rdfs:comment xml:lang="en">The entity to which the payment was made.</rdfs:comment>
 		<rdfs:label xml:lang="en">payee</rdfs:label>
-		<rdfs:isDefinedBy rdf:resource="https://lov.learndata.info/payee"/>
+		<rdfs:isDefinedBy rdf:resource="https://schema.learndata.info//payee"/>
 	</owl:DatatypeProperty>
-	<owl:DatatypeProperty rdf:about="https://lov.learndata.info/payer">
-		<rdfs:comment xml:lang="en">The entity to which the payment was made.</rdfs:comment>
+	<owl:DatatypeProperty rdf:about="https://schema.learndata.info/payer">
 		<rdfs:label xml:lang="en">payee</rdfs:label>
-		<rdfs:isDefinedBy rdf:resource="https://lov.learndata.info/payer"/>
+		<rdfs:comment xml:lang="en">The entity to which the payment was made.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="https://schema.learndata.info//payer"/>
 	</owl:DatatypeProperty>
-	<owl:DatatypeProperty rdf:about="https://lov.learndata.info/paymentDate">
-		<rdfs:comment xml:lang="en">The date the payment is deemed to have occurred.</rdfs:comment>
+	<owl:DatatypeProperty rdf:about="https://schema.learndata.info/paymentDate">
 		<rdfs:label xml:lang="en">payment date</rdfs:label>
-		<rdfs:isDefinedBy rdf:resource="https://lov.learndata.info/paymentDate"/>
+		<rdfs:comment xml:lang="en">The date the payment is deemed to have occurred.</rdfs:comment>
+		<rdfs:isDefinedBy rdf:resource="https://schema.learndata.info//paymentDate"/>
 	</owl:DatatypeProperty>
-	<owl:DatatypeProperty rdf:about="https://lov.learndata.info/referencesInvoice">
+	<owl:DatatypeProperty rdf:about="https://schema.learndata.info/referencesInvoice">
 		<rdfs:label xml:lang="en">related invoice</rdfs:label>
 		<rdfs:comment xml:lang="en">The invoice related to the payment</rdfs:comment>
-		<rdfs:isDefinedBy rdf:resource="https://lov.learndata.info/referencesInvoice"/>
+		<rdfs:isDefinedBy rdf:resource="https://schema.learndata.info//referencesInvoice"/>
 	</owl:DatatypeProperty>
 	<!--
 	/////////////////////
 	/ Named Individuals Definitions
 	/////////////////////
 	-->
-	<owl:NamedIndividual rdf:about="https://lov.learndata.info/True">
-		<rdfs:isDefinedBy rdf:resource="https://lov.learndata.info/True"/>
+	<owl:NamedIndividual rdf:about="https://schema.learndata.info/True">
+		<rdfs:isDefinedBy rdf:resource="https://schema.learndata.info//True"/>
 	</owl:NamedIndividual>
-	<owl:NamedIndividual rdf:about="https://lov.learndata.info/False">
-		<rdfs:isDefinedBy rdf:resource="https://lov.learndata.info/False"/>
+	<owl:NamedIndividual rdf:about="https://schema.learndata.info/False">
+		<rdfs:isDefinedBy rdf:resource="https://schema.learndata.info//False"/>
 	</owl:NamedIndividual>
 </rdf:RDF>

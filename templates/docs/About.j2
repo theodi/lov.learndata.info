@@ -15,7 +15,7 @@
     <title>{{ title }} - {{ sitename }} {{ SUBNAME }}</title>
     <meta charset="utf-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="lov.learndata.info is a set of extensible schemas that enables webmasters to embed
+    <meta name="description" content="{{ sitename }} is a set of extensible schemas that enables webmasters to embed
     structured data on their web pages for use by search engines and other applications." />
     <link rel="shortcut icon" type="image/png" href="{{docsdir}}/favicon.ico"/>
     <link rel="stylesheet" type="text/css" href="https://schema.org/schemaorg.css" />
@@ -32,16 +32,12 @@
     {% include 'PageHeader.j2' with context %}
   <div id="mainContent">
 
-<h1>lov.learndata.info Version {{version}}</h1>
+<h1>{{ sitename }} Version {{version}}</h1>
 
 <dl>
 
  <dt>Version:</dt>
  <dd>{{version}}</dd>
-
- <dt>Archive URL:</dt>
- <dd><a href="https://github.com/theodi/lov.learndata.info/tree/main/data/releases/{{version}}/">
-     https://github.com/theodi/lov.learndata.info/tree/main/data/releases/{{version}}/</a></dd>
 
  <dt>Published:</dt>
  <dd>{{date}}</dd>

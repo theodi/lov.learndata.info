@@ -1,83 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
  <url>
-   <loc>https://lov.learndata.info/Intangible</loc>
+   <loc>https://schema.learndata.info/Intangible</loc>
    <lastmod>2024-02-13</lastmod>
  </url>
  <url>
-   <loc>https://lov.learndata.info/Payment</loc>
+   <loc>https://schema.learndata.info/Payment</loc>
    <lastmod>2024-02-13</lastmod>
  </url>
  <url>
-   <loc>https://lov.learndata.info/Property</loc>
+   <loc>https://schema.learndata.info/Property</loc>
    <lastmod>2024-02-13</lastmod>
  </url>
  <url>
-   <loc>https://lov.learndata.info/Thing</loc>
+   <loc>https://schema.learndata.info/Thing</loc>
    <lastmod>2024-02-13</lastmod>
  </url>
  <url>
-   <loc>https://lov.learndata.info/payee</loc>
+   <loc>https://schema.learndata.info/payee</loc>
    <lastmod>2024-02-13</lastmod>
  </url>
  <url>
-   <loc>https://lov.learndata.info/payer</loc>
+   <loc>https://schema.learndata.info/payer</loc>
    <lastmod>2024-02-13</lastmod>
  </url>
  <url>
-   <loc>https://lov.learndata.info/paymentDate</loc>
+   <loc>https://schema.learndata.info/paymentDate</loc>
    <lastmod>2024-02-13</lastmod>
  </url>
  <url>
-   <loc>https://lov.learndata.info/referencesInvoice</loc>
+   <loc>https://schema.learndata.info/referencesInvoice</loc>
    <lastmod>2024-02-13</lastmod>
  </url>
  <url>
-   <loc>https://lov.learndata.info/docs/schemas.html</loc>
+   <loc>https://schema.learndata.info/docs/schemas.html</loc>
    <lastmod>2024-02-13</lastmod>
  </url>
  <url>
-   <loc>https://lov.learndata.info/docs/full.html</loc>
+   <loc>https://schema.learndata.info/docs/full.html</loc>
    <lastmod>2024-02-13</lastmod>
  </url>
  <url>
-   <loc>https://lov.learndata.info/docs/gs.html</loc>
+   <loc>https://schema.learndata.info/docs/gs.html</loc>
    <lastmod>2024-02-13</lastmod>
  </url>
  <url>
-   <loc>https://lov.learndata.info/docs/about.html</loc>
+   <loc>https://schema.learndata.info/docs/about.html</loc>
    <lastmod>2024-02-13</lastmod>
  </url>
  <url>
-   <loc>https://lov.learndata.info/docs/howwework.html</loc>
+   <loc>https://schema.learndata.info/docs/howwework.html</loc>
    <lastmod>2024-02-13</lastmod>
  </url>
  <url>
-   <loc>https://lov.learndata.info/docs/releases.html</loc>
+   <loc>https://schema.learndata.info/docs/releases.html</loc>
    <lastmod>2024-02-13</lastmod>
  </url>
  <url>
-   <loc>https://lov.learndata.info/docs/faq.html</loc>
+   <loc>https://schema.learndata.info/docs/faq.html</loc>
    <lastmod>2024-02-13</lastmod>
  </url>
  <url>
-   <loc>https://lov.learndata.info/docs/datamodel.html</loc>
+   <loc>https://schema.learndata.info/docs/datamodel.html</loc>
    <lastmod>2024-02-13</lastmod>
  </url>
  <url>
-   <loc>https://lov.learndata.info/docs/developers.html</loc>
+   <loc>https://schema.learndata.info/docs/developers.html</loc>
    <lastmod>2024-02-13</lastmod>
  </url>
  <url>
-   <loc>https://lov.learndata.info/docs/extension.html</loc>
+   <loc>https://schema.learndata.info/docs/extension.html</loc>
    <lastmod>2024-02-13</lastmod>
  </url>
  <url>
-   <loc>https://lov.learndata.info/docs/meddocs.html</loc>
+   <loc>https://schema.learndata.info/docs/meddocs.html</loc>
    <lastmod>2024-02-13</lastmod>
  </url>
  <url>
-   <loc>https://lov.learndata.info/docs/hotels.html</loc>
+   <loc>https://schema.learndata.info/docs/hotels.html</loc>
    <lastmod>2024-02-13</lastmod>
  </url>
 </urlset>

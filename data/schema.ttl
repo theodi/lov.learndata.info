@@ -1,4 +1,4 @@
-@prefix : <https://lov.learndata.info/> .
+@prefix : <https://schema.learndata.info/> .
 @prefix schema: <https://schema.org/> .
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .

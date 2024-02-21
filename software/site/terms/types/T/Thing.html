@@ -6,7 +6,7 @@
     
     <head>
 
-    <title>Thing - lov.learndata.info Type</title>
+    <title>Thing - schema.learndata.info Type</title>
     <meta charset="utf-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Schema.org Type: Thing - The most generic type of item." />
@@ -43,7 +43,7 @@
     <div id="pagehead1" class="mobnav">
       <div class="header-block" id="pagehead-left">
         <div id="sitename2">
-          <a href="/">lov.learndata.info</a>
+          <a href="/">schema.learndata.info</a>
         </div>
         <div id="navicon2">
           <a href="javascript:void(0);" class="icon" onclick="navFunction()"><img height="40" alt="menu" src="/docs/menu-bar-icon-white.png"></a>
@@ -125,9 +125,9 @@
                 <label for="morecheck"><b><span style="cursor: pointer;">[more...]</span></b></label>
             </div>
             <input type='checkbox' checked="checked" style='display: none' id=morecheck><div id='infomsg' style='background-color: #EEEEEE; text-align: left; padding: 0.5em;'>
-            <ul><li> <span class="canonicalUrl">Canonical URL: https://lov.learndata.info/Thing</span> </li>
+            <ul><li> <span class="canonicalUrl">Canonical URL: https://schema.learndata.info/Thing</span> </li>
             
-                <!--<li><a href='https://docs.google.com/a/google.com/forms/d/1krxHlWJAO3JgvHRZV9Rugkr9VYnMdrI10xbGsWt733c/viewform?entry.1174568178&entry.41124795=https://lov.learndata.info/Thing&entry.882602760=Type'>Leave public feedback on this term &#128172;</a></li>-->
+                <!--<li><a href='https://docs.google.com/a/google.com/forms/d/1krxHlWJAO3JgvHRZV9Rugkr9VYnMdrI10xbGsWt733c/viewform?entry.1174568178&entry.41124795=https://schema.learndata.info/Thing&entry.882602760=Type'>Leave public feedback on this term &#128172;</a></li>-->
                 <li><a href='https://github.com/schemaorg/schemaorg/issues?q=is%3Aissue+is%3Aopen+Thing'>Check for open issues.</a></li>
             </ul>
     </div>
@@ -588,7 +588,7 @@
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "schema": "https://schema.org/",
-    "schema1": "https://lov.learndata.info/",
+    "schema1": "https://schema.learndata.info/",
     "sh": "http://www.w3.org/ns/shacl#",
     "skos": "http://www.w3.org/2004/02/skos/core#",
     "sosa": "http://www.w3.org/ns/sosa/",
@@ -599,6 +599,91 @@
     "xsd": "http://www.w3.org/2001/XMLSchema#"
   },
   "@graph": [
+    {
+      "@id": "schema:name",
+      "@type": "rdf:Property",
+      "owl:equivalentProperty": {
+        "@id": "dcterms:title"
+      },
+      "rdfs:comment": "The name of the item.",
+      "rdfs:label": "name",
+      "rdfs:subPropertyOf": {
+        "@id": "rdfs:label"
+      },
+      "schema:domainIncludes": {
+        "@id": "schema1:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:description",
+      "@type": "rdf:Property",
+      "owl:equivalentProperty": {
+        "@id": "dcterms:description"
+      },
+      "rdfs:comment": "A description of the item.",
+      "rdfs:label": "description",
+      "schema:domainIncludes": {
+        "@id": "schema1:Thing"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:TextObject"
+        },
+        {
+          "@id": "schema:Text"
+        }
+      ]
+    },
+    {
+      "@id": "schema:identifier",
+      "@type": "rdf:Property",
+      "owl:equivalentProperty": {
+        "@id": "dcterms:identifier"
+      },
+      "rdfs:comment": "The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.\n        ",
+      "rdfs:label": "identifier",
+      "schema:domainIncludes": {
+        "@id": "schema1:Thing"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:PropertyValue"
+        },
+        {
+          "@id": "schema:Text"
+        }
+      ]
+    },
+    {
+      "@id": "schema:url",
+      "@type": "rdf:Property",
+      "rdfs:comment": "URL of the item.",
+      "rdfs:label": "url",
+      "schema:domainIncludes": {
+        "@id": "schema1:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
+      }
+    },
+    {
+      "@id": "schema:sameAs",
+      "@type": "rdf:Property",
+      "rdfs:comment": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
+      "rdfs:label": "sameAs",
+      "schema:domainIncludes": {
+        "@id": "schema1:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
+      }
+    },
     {
       "@id": "schema:alternateName",
       "@type": "rdf:Property",
@@ -612,34 +697,22 @@
       }
     },
     {
-      "@id": "schema:disambiguatingDescription",
+      "@id": "schema:mainEntityOfPage",
       "@type": "rdf:Property",
-      "rdfs:comment": "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
-      "rdfs:label": "disambiguatingDescription",
-      "rdfs:subPropertyOf": {
-        "@id": "schema1:description"
-      },
+      "rdfs:comment": "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.",
+      "rdfs:label": "mainEntityOfPage",
       "schema:domainIncludes": {
         "@id": "schema1:Thing"
       },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
-    },
-    {
-      "@id": "schema:image",
-      "@type": "rdf:Property",
-      "rdfs:comment": "An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].",
-      "rdfs:label": "image",
-      "schema:domainIncludes": {
-        "@id": "schema1:Thing"
+      "schema:inverseOf": {
+        "@id": "schema:mainEntity"
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         }
       ]
     },
@@ -664,65 +737,30 @@
       ]
     },
     {
-      "@id": "schema:url",
-      "@type": "rdf:Property",
-      "rdfs:comment": "URL of the item.",
-      "rdfs:label": "url",
-      "schema:domainIncludes": {
-        "@id": "schema1:Thing"
+      "@id": "schema1:Thing",
+      "@type": "rdfs:Class",
+      "owl:sameAs": {
+        "@id": "schema:Thing"
       },
-      "schema:rangeIncludes": {
-        "@id": "schema:URL"
+      "rdfs:comment": "The most generic type of item.",
+      "rdfs:label": "Thing",
+      "schema:sameAs": {
+        "@id": "schema:Thing"
       }
     },
     {
-      "@id": "schema:description",
+      "@id": "schema:disambiguatingDescription",
       "@type": "rdf:Property",
-      "owl:equivalentProperty": {
-        "@id": "dcterms:description"
-      },
-      "rdfs:comment": "A description of the item.",
-      "rdfs:label": "description",
-      "schema:domainIncludes": {
-        "@id": "schema1:Thing"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:TextObject"
-        },
-        {
-          "@id": "schema:Text"
-        }
-      ]
-    },
-    {
-      "@id": "schema:name",
-      "@type": "rdf:Property",
-      "owl:equivalentProperty": {
-        "@id": "dcterms:title"
-      },
-      "rdfs:comment": "The name of the item.",
-      "rdfs:label": "name",
+      "rdfs:comment": "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
+      "rdfs:label": "disambiguatingDescription",
       "rdfs:subPropertyOf": {
-        "@id": "rdfs:label"
+        "@id": "schema1:description"
       },
       "schema:domainIncludes": {
         "@id": "schema1:Thing"
       },
       "schema:rangeIncludes": {
         "@id": "schema:Text"
-      }
-    },
-    {
-      "@id": "schema:sameAs",
-      "@type": "rdf:Property",
-      "rdfs:comment": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
-      "rdfs:label": "sameAs",
-      "schema:domainIncludes": {
-        "@id": "schema1:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:URL"
       }
     },
     {
@@ -738,53 +776,10 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:CreativeWork"
+        },
+        {
           "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        }
-      ]
-    },
-    {
-      "@id": "schema:mainEntityOfPage",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.",
-      "rdfs:label": "mainEntityOfPage",
-      "schema:domainIncludes": {
-        "@id": "schema1:Thing"
-      },
-      "schema:inverseOf": {
-        "@id": "schema:mainEntity"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:URL"
-        }
-      ]
-    },
-    {
-      "@id": "schema:identifier",
-      "@type": "rdf:Property",
-      "owl:equivalentProperty": {
-        "@id": "dcterms:identifier"
-      },
-      "rdfs:comment": "The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.\n        ",
-      "rdfs:label": "identifier",
-      "schema:domainIncludes": {
-        "@id": "schema1:Thing"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:PropertyValue"
-        },
-        {
-          "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:URL"
         }
       ]
     },
@@ -801,16 +796,21 @@
       }
     },
     {
-      "@id": "schema1:Thing",
-      "@type": "rdfs:Class",
-      "owl:sameAs": {
-        "@id": "schema:Thing"
+      "@id": "schema:image",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].",
+      "rdfs:label": "image",
+      "schema:domainIncludes": {
+        "@id": "schema1:Thing"
       },
-      "rdfs:comment": "The most generic type of item.",
-      "rdfs:label": "Thing",
-      "schema:sameAs": {
-        "@id": "schema:Thing"
-      }
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:ImageObject"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
     }
   ]
 }

@@ -28,14 +28,15 @@ import rdflib
 import jinja2
 
 import textutils
-from sdotermsource import SdoTermSource
+from sdotermsource import SdoTermSource, VOCABURI
 from sdocollaborators import collaborator
 from sdoterm import *
 from schemaexamples import SchemaExamples
 from localmarkdown import Markdown
 from schemaversion import *
 
-SITENAME="lov.learndata.info"
+VOCABURI = SdoTermSource.vocabUri()
+SITENAME=VOCABURI.split("://")[1].rstrip("/")
 TEMPLATESDIR = "templates"
 
 parser = argparse.ArgumentParser()

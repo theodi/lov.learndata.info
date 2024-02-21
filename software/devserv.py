@@ -27,7 +27,7 @@ args = parser.parse_args()
 app = Flask(__name__, static_folder='site', static_url_path='')
 
 
-    
+
 @app.route('/')
 def serve_home():
     @after_this_request
@@ -80,9 +80,9 @@ def serve_colls(path):
         path = "docs/collab/" +path+".html"
 
     print("Serving file: " + path)
-  
+
     return app.send_static_file(path)
-       
+
 @app.route('/<path>')
 def serve_terms(path):
     if not path.endswith(".html"):
@@ -93,9 +93,9 @@ def serve_terms(path):
             m = re.match("^([0-9A-Z])(.*)$",path)
             if m:
                 path = "terms/types/%s/%s%s.html" % (m.group(1),m.group(1),m.group(2))
-    
+
     print("Serving file: " + path)
-  
+
     return app.send_static_file(path)
 
 @app.route('/version/<ver>')
@@ -106,13 +106,13 @@ def serve_downloads(ver,path=""):
         ver = getVersion()
     if not len(path):
         path="schema-all.html"
-    path = "releases/%s/%s" % (ver,path) 
+    path = "releases/%s/%s" % (ver,path)
     print("Serving file: " + path)
     return app.send_static_file(path)
 
 # start the server with the 'run()' method
 if __name__ == '__main__':
-    print("Local dev server for Schema.org version: %s" % getVersion())
+    print("Local dev server for version: %s" % getVersion())
     if args.production:
         print(Fore.RED + "Runing with Production settings" + Style.RESET_ALL)
     else:

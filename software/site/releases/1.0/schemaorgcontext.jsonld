@@ -31,7 +31,7 @@
         "void": "http://rdfs.org/ns/void#",
         "xsd": "http://www.w3.org/2001/XMLSchema#",
         "xml": "http://www.w3.org/XML/1998/namespace",
-        "schema1": "https://lov.learndata.info/",
+        "schema1": "https://schema.learndata.info/",
         "dct": "http://purl.org/dc/terms/",
         "dctype": "http://purl.org/dc/dcmitype/",
         "Intangible": {"@id": "schema1:Intangible"},

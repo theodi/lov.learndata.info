@@ -1,5 +1,0 @@
-"id","label","comment","subPropertyOf","equivalentProperty","subproperties","domainIncludes","rangeIncludes","inverseOf","supersedes","supersededBy","isPartOf"
-"https://lov.learndata.info/payee","payee","The entity to which the payment was made.","","","","https://lov.learndata.info/Payment","https://schema.org/Organization, https://schema.org/Person, https://schema.org/Text","","","",""
-"https://lov.learndata.info/payer","payee","The entity to which the payment was made.","","","","https://lov.learndata.info/Payment","https://schema.org/Organization, https://schema.org/Person, https://schema.org/Text","","","",""
-"https://lov.learndata.info/paymentDate","payment date","The date the payment is deemed to have occurred.","","","","https://lov.learndata.info/Payment","https://schema.org/Date, https://schema.org/DateTime","","","",""
-"https://lov.learndata.info/referencesInvoice","related invoice","The invoice related to the payment","","","","https://lov.learndata.info/Payment","https://schema.org/Invoice","","","",""

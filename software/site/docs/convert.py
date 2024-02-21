@@ -35,7 +35,7 @@ begin = """<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Schema.org: Documentation: Schema.org Feeds 1.0</title>
+<title>Documentation: Feeds 1.0</title>
 
 <!-- #### Static Doc Insert Head goes here -->
 </head><body onload="updatetext()">

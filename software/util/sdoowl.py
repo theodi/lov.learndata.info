@@ -101,7 +101,7 @@ class OwlBuild():
         self.dom.append(Comment("\n\t/////////////////////\n\t/ Class Definitions\n\t/////////////////////\n\t"))
 
         for (s,p,o) in graph.triples((None,RDF.type,RDFS.Class)):
-            if s.startswith("https://lov.learndata.info"):
+            if s.startswith(VOCABURI):
                 types.update({s:graph.identifier})
 
         for t in sorted(types.keys()):
@@ -109,7 +109,7 @@ class OwlBuild():
 
         self.dom.append(Comment("\n\t/////////////////////\n\t/ Property Definitions\n\t/////////////////////\n\t"))
         for (s,p,o) in graph.triples((None,RDF.type,RDF.Property)):
-            if s.startswith("https://lov.learndata.info"):
+            if s.startswith(VOCABURI):
                 props.update({s:graph.identifier})
 
         for p in sorted(props.keys()):
@@ -228,7 +228,7 @@ class OwlBuild():
 
     def addDefined(self,uri,ext=None):
         if not ext:
-            ext = "https://lov.learndata.info"
+            ext = VOCABURI
         ext = ext.replace("http://", "https://")
         defn = Element("rdfs:isDefinedBy")
         path = "%s/%s" % (ext,os.path.basename(uri))
@@ -238,12 +238,12 @@ class OwlBuild():
 
 
     def outputEnums(self,graph):
-        q = """ prefix schema: <https://lov.learndata.info>
+        q = """ prefix schema: <%s>
         select Distinct ?enum ?parent where{
     		?parent rdfs:subClassOf schema:Enumeration.
             ?enum rdfs:subClassOf ?parent.
         }
-        """
+        """ % VOCABURI
         enums = list(graph.query(q))
         #log.info("Enum Count %s" % len(enums))
         for row in enums:

@@ -23,7 +23,7 @@ import io
 from sdoterm import *
 from localmarkdown import Markdown
 
-DEFVOCABURI="https://lov.learndata.info/"
+DEFVOCABURI="https://schema.learndata.info/"
 VOCABURI=None
 DATATYPEURI = None
 ENUMERATIONURI = None

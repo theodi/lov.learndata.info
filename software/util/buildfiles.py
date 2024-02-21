@@ -94,7 +94,7 @@ def owl(page):
 
 def sitemap(page):
     node = """ <url>
-   <loc>https://lov.learndata.info/%s</loc>
+   <loc>%s%s</loc>
    <lastmod>%s</lastmod>
  </url>
 """
@@ -116,12 +116,13 @@ def sitemap(page):
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 """)
     terms = SdoTermSource.getAllTerms(supressSourceLinks=True)
+    VOCABURI = SdoTermSource.vocabUri()
     ver = getVersionDate(getVersion())
     for term in terms:
         if not (term.startswith("http://") or term.startswith("https://")):
-            output.append(node % (term,ver))
+            output.append(node % (VOCABURI, term,ver))
     for term in STATICPAGES:
-        output.append(node % (term,ver))
+        output.append(node % (VOCABURI, term,ver))
     output.append("</urlset>\n")
     return "".join(output)
 
@@ -187,9 +188,6 @@ def exportrdf(exportType):
     formats =  ["json-ld", "turtle", "nt", "nquads", "rdf"]
     extype = exportType[len("RDFExport."):]
     if exportType == "RDFExports":
-        print("graph")
-        kwargs = {'sort_keys': True}
-        print(currentGraph.serialize(format="nt",auto_compact=True,**kwargs))
         for format in sorted(formats):
             _exportrdf(format,allGraph,currentGraph)
     elif extype in formats:
@@ -203,6 +201,8 @@ def _exportrdf(format,all,current):
     global completed
     exts = {"xml":".xml","rdf":".rdf","nquads":".nq","nt": ".nt","json-ld": ".jsonld", "turtle":".ttl"}
     protocol, altprotocol = protocols()
+    VOCABURI = SdoTermSource.vocabUri()
+    SITENAME=VOCABURI.split("://")[1].rstrip("/")
 
     if format in completed:
         return
@@ -216,11 +216,11 @@ def _exportrdf(format,all,current):
             g = current
         if format == "nquads":
             gr = rdflib.Dataset()
-            qg = gr.graph(URIRef("%s://lov.learndata.info/%s" % (protocol,getVersion())))
+            qg = gr.graph(URIRef("%s://%s/%s" % (protocol,SITENAME,getVersion())))
             qg += g
             g = gr
-        fn = fileName("releases/%s/lov-%s-%s%s" % (getVersion(),ver,protocol,exts[format]))
-        afn = fileName("releases/%s/lov-%s-%s%s" % (getVersion(),ver,altprotocol,exts[format]))
+        fn = fileName("releases/%s/%s-%s%s" % (getVersion(),ver,protocol,exts[format]))
+        afn = fileName("releases/%s/%s-%s%s" % (getVersion(),ver,altprotocol,exts[format]))
         fmt = format
         if format == "rdf":
             fmt = "pretty-xml"
@@ -320,8 +320,8 @@ def exportcsv(page):
 
 def writecsvout(ftype,data,fields,ver,protocol,altprotocol):
     import csv
-    fn = fileName("releases/%s/lov-%s-%s-%s.csv" % (getVersion(),ver,protocol,ftype))
-    afn = fileName("releases/%s/lov-%s-%s-%s.csv" % (getVersion(),ver,altprotocol,ftype))
+    fn = fileName("releases/%s/%s-%s-%s.csv" % (getVersion(),ver,protocol,ftype))
+    afn = fileName("releases/%s/%s-%s-%s.csv" % (getVersion(),ver,altprotocol,ftype))
     csvout = io.StringIO()
     csvfile = open(fn,'w', encoding='utf8')
     acsvfile = open(afn,'w', encoding='utf8')

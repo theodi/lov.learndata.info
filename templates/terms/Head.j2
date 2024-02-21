@@ -1,9 +1,9 @@
 <head>
 
-    <title>{{ title }} - {{ sitename }} {{ TERMTYPE }}</title>
+    <title>{{ sitename }} {{ TERMTYPE }}</title>
     <meta charset="utf-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Schema.org {{TERMTYPE}}: {{term.label}} - {{term.comment}}" />
+    <meta name="description" content="{{ sitename }} {{TERMTYPE}}: {{term.label}} - {{term.comment}}" />
     <link rel="shortcut icon" type="image/png" href="{{docsdir}}/favicon.ico"/>
     <link rel="stylesheet" type="text/css" href="{{docsdir}}/schemaorg.css" />
     <link rel="stylesheet" type="text/css" href="{{docsdir}}/devnote.css" />
@@ -21,6 +21,6 @@
     <script src="{{docsdir}}/termfind/termfind.js"></script>
     <link rel="stylesheet" type="text/css" href="{{docsdir}}/termfind/termfind.css" />
 
-<link rel="canonical" href="https://schema.org/{{term.id}}" />
+<link rel="canonical" href="https://{{ sitename }}/{{term.id}}" />
 
 </head>

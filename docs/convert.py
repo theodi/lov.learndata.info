@@ -61,5 +61,5 @@ with open(fn + '.html', 'w') as f:
 #|<!-- #### Static Doc Insert PageHead goes here -->
 
 #These use relative paths to the css/javascripts etc.
-#The easiest thing to do would be to do versions of these that have full schema.org path
+#The easiest thing to do would be to do versions of these that have full URL path
 #These files are in templates/static-doc-inserts

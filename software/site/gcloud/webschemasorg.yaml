@@ -1,8 +1,0 @@
-##### webschemas.org Yaml
-
-runtime: python312
-
-
-includes:
-- includes-dev.yaml
-- handlers.yaml

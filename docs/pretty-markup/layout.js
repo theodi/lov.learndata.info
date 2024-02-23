@@ -43,6 +43,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 var TYPE_URI = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type';
 var NAME_URI = 'http://schema.org/name';
+var VOCAB_URI = 'https://schema.learndata.info';
+var RDF_SCHEMA_URI = 'http://www.w3.org/2000/01/rdf-schema#';
+var RDF_SYNTAX_URI = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#';
 var defaultBase = 'http://example.org/';
 var htmlIndentStep = 30; // one indentation step in HTML representation (in px)
 
@@ -54,9 +57,9 @@ var textIndentStep = 4; // one indentation step in text representation (in space
  */
 
 function replacePrefix(text) {
-    text = text.split(/https?:\/\/schema.org\//g).join('');
-    text = text.split(/http:\/\/www.w3.org\/1999\/02\/22-rdf-syntax-ns#/g).join('@');
-    text = text.split(/http:\/\/www.w3.org\/2000\/01\/rdf-schema#/g).join('@');
+    text = text.split(new RegExp(VOCAB_URI + '/', 'g')).join('');
+    text = text.split(new RegExp(RDF_SYNTAX_URI, 'g')).join('@');
+    text = text.split(new RegExp(RDF_SCHEMA_URI, 'g')).join('@');
     return text;
 }
 /**
@@ -348,7 +351,6 @@ function _prettyMarkupHtml() {
                         } finally {
                             _iterator3.f();
                         }
-
                         return _context.abrupt("return", tripleRows);
 
                     case 14:

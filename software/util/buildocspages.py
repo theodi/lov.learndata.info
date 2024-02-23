@@ -11,7 +11,6 @@ for path in [os.getcwd(),"software/Util","software/scripts","software/SchemaTerm
 
 from buildsite import *
 from sdotermsource import SdoTermSource
-from sdocollaborators import collaborator
 from sdoterm import *
 from buildtermlist import buildlist
 

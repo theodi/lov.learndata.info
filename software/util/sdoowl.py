@@ -78,14 +78,14 @@ class OwlBuild():
         for (k,v) in NAMESPACES.items():
             self.dom.set(k,v)
 
-        self.dom.append(Comment("\n\tGenerated from Schema.org version: %s released: %s\n\t" % (getVersion(),getVersionDate(getVersion()))))
+        self.dom.append(Comment("\n\tGenerated from %s version: %s released: %s\n\t" % (VOCABURI, getVersion(),getVersionDate(getVersion()))))
         self.ont = SubElement(self.dom,"owl:Ontology")
         self.ont.set("rdf:about",VOCABURI)
         info = SubElement(self.ont,"owl:versionInfo")
         info.set("rdf:datatype","http://www.w3.org/2001/XMLSchema#string")
         info.text = getVersion()
         x = SubElement(self.ont,"rdfs:label")
-        x.text = "Schema.org Vocabulary"
+        x.text = "%s Vocabulary" % VOCABURI
         x = SubElement(self.ont,"dcterms:modified")
         x.set("rdf:datatype", "http://www.w3.org/2001/XMLSchema#date")
         x.text = getVersionDate(getVersion())

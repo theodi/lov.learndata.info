@@ -2,7 +2,7 @@
 set -e
 set -u
 
-#Deployment for the schema.org site
+#Deployment for the site
 
 function usage {
     echo "usage: $(basename $0) -e -m"
@@ -23,10 +23,10 @@ while getopts 'm' OPTION; do
   esac
 done
 
-echo "Deploy to gcloud for Schema.org"
+echo "Deploy to gcloud"
 
 software/gcloud/deploy2gcloud.sh $MIG -p schemaorgae -y schemaorg.yaml
 
-    
-    
+
+
 

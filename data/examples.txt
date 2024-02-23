@@ -1,106 +1,69 @@
-TYPES: #eg-0001 Person, PostalAddress, addressRegion, postalCode, address, streetAddress, telephone, email, url, addressLocality
+TYPES: #eg-0001 Payment, payee, payer, paymentDate, referencesInvoice, amount
 
 PRE-MARKUP:
 
-Jane Doe
-<img src="janedoe.jpg" alt="Photo of Jane Doe"/>
+Payment Example
+<img src="payment.jpg" alt="Payment Image"/>
 
-Professor
-20341 Whitworth Institute
-405 Whitworth
-Seattle WA 98052
-(425) 123-4567
-<a href="mailto:jane-doe@xyz.edu">jane-doe@illinois.edu</a>
-
-Jane's home page:
-<a href="http://www.janedoe.com">janedoe.com</a>
-
-Graduate students:
-<a href="http://www.xyz.edu/students/alicejones.html">Alice Jones</a>
-<a href="http://www.xyz.edu/students/bobsmith.html">Bob Smith</a>
+Payment Date: 2024-02-23
+Payee: John Doe
+Payer: XYZ Corporation
+Amount: $100.00
+Reference Invoice: #inv-001
 
 MICRODATA:
 
-<div itemscope itemtype="https://schema.org/Person">
-  <span itemprop="name">Jane Doe</span>
-  <img src="janedoe.jpg" itemprop="image" alt="Photo of Jane Doe"/>
+<div itemscope itemtype="https://schema.learndata.info/Payment https://schema.org/Payment">
+  <span itemprop="name">Payment Example</span>
+  <img src="payment.jpg" itemprop="image" alt="Payment Image"/>
 
-  <span itemprop="jobTitle">Professor</span>
-  <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
-    <span itemprop="streetAddress">
-      20341 Whitworth Institute
-      405 N. Whitworth
-    </span>
-    <span itemprop="addressLocality">Seattle</span>,
-    <span itemprop="addressRegion">WA</span>
-    <span itemprop="postalCode">98052</span>
-  </div>
-  <span itemprop="telephone">(425) 123-4567</span>
-  <a href="mailto:jane-doe@xyz.edu" itemprop="email">
-    jane-doe@xyz.edu</a>
+  <span itemprop="schema:identifier">123456789</span><br/>
 
-  Jane's home page:
-  <a href="http://www.janedoe.com" itemprop="url">janedoe.com</a>
-
-  Graduate students:
-  <a href="http://www.xyz.edu/students/alicejones.html" itemprop="colleague">
-    Alice Jones</a>
-  <a href="http://www.xyz.edu/students/bobsmith.html" itemprop="colleague">
-    Bob Smith</a>
+  Payment Date: <span itemprop="schema:paymentDate">2024-02-23</span><br/>
+  Payee: <span itemprop="schema:payee">John Doe</span><br/>
+  Payer: <span itemprop="schema:payer">XYZ Corporation</span><br/>
+  Amount: <span itemprop="schema:amount" itemscope itemtype="https://schema.org/MonetaryAmount">
+    <span itemprop="schema:currency">$</span><span itemprop="schema:value">100.00</span>
+  </span><br/>
+  Reference Invoice: <span itemprop="schema:referencesInvoice">#inv-001</span>
 </div>
 
 RDFA:
 
-<div vocab="https://schema.org/" typeof="Person">
-  <span property="name">Jane Doe</span>
-  <img src="janedoe.jpg" property="image" alt="Photo of Jane Doe"/>
+<div vocab="https://schema.learndata.info/ https://schema.org/" typeof="schema:Payment">
+  <span property="schema:name">Payment Example</span>
+  <img src="payment.jpg" property="schema:image" alt="Payment Image"/>
 
-  <span property="jobTitle">Professor</span>
-  <div property="address" typeof="PostalAddress">
-    <span property="streetAddress">
-      20341 Whitworth Institute
-      405 N. Whitworth
-    </span>
-    <span property="addressLocality">Seattle</span>,
-    <span property="addressRegion">WA</span>
-    <span property="postalCode">98052</span>
-  </div>
-  <span property="telephone">(425) 123-4567</span>
-  <a href="mailto:jane-doe@xyz.edu" property="email">
-    jane-doe@xyz.edu</a>
+  <span property="schema:identifier">123456789</span><br/>
 
-  Jane's home page:
-  <a href="http://www.janedoe.com" property="url">janedoe.com</a>
-
-  Graduate students:
-  <a href="http://www.xyz.edu/students/alicejones.html" property="colleague">
-    Alice Jones</a>
-  <a href="http://www.xyz.edu/students/bobsmith.html" property="colleague">
-    Bob Smith</a>
+  Payment Date: <span property="schema:paymentDate">2024-02-23</span><br/>
+  Payee: <span property="schema:payee">John Doe</span><br/>
+  Payer: <span property="schema:payer">XYZ Corporation</span><br/>
+  Amount: <span property="schema:amount" typeof="schema:MonetaryAmount">
+    <span property="schema:currency">$</span><span property="schema:value">100.00</span>
+  </span><br/>
+  Reference Invoice: <span property="schema:referencesInvoice">#inv-001</span>
 </div>
 
 JSON:
 
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Seattle",
-    "addressRegion": "WA",
-    "postalCode": "98052",
-    "streetAddress": "20341 Whitworth Institute 405 N. Whitworth"
+  "@context": {
+    "@vocab": "https://schema.learndata.info/",
+    "schema": "https://schema.org/"
   },
-  "colleague": [
-    "http://www.xyz.edu/students/alicejones.html",
-    "http://www.xyz.edu/students/bobsmith.html"
-  ],
-  "email": "mailto:jane-doe@xyz.edu",
-  "image": "janedoe.jpg",
-  "jobTitle": "Professor",
-  "name": "Jane Doe",
-  "telephone": "(425) 123-4567",
-  "url": "http://www.janedoe.com"
+  "@type": "Payment",
+  "schema:name": "Payment Example",
+  "schema:identifier": "123456789",
+  "paymentDate": "2024-02-23",
+  "payee": "John Doe",
+  "payer": "XYZ Corporation",
+  "schema:amount": {
+    "@type": "schema:MonetaryAmount",
+    "schema:currency": "$",
+    "schema:value": "100.00"
+  },
+  "referencesInvoice": "#inv-001"
 }
 </script>

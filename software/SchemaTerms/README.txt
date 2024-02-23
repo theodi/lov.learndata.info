@@ -1,9 +1,9 @@
 SchemaTerms
 ===========
 
-A library containing an interface to the definitions of Schema.org terms.
+A library containing an interface to the definitions of terms.
 
-Mainly used for the creation of the user interface and dump files available from the Schema.org site.
+Mainly used for the creation of the user interface and dump files available from the site.
 
 sdotermsource.py provides an interface to load and query the RDF data, plus provides data structures to describe the terms for processing.
 

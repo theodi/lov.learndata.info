@@ -156,35 +156,6 @@ def exportrdf(exportType):
 
         allGraph += SdoTermSource.sourceGraph()
 
-        protocol, altprotocol = protocols()
-
-        deloddtriples = """DELETE {?s ?p ?o}
-            WHERE {
-                ?s ?p ?o.
-                FILTER (! strstarts(str(?s), "%s://schema.org") ).
-            }""" % (protocol)
-        #allGraph.update(deloddtriples)
-        currentGraph += allGraph
-
-
-        desuperseded="""PREFIX schema: <%s://schema.org/>
-        DELETE {?s ?p ?o}
-        WHERE{
-            ?s ?p ?o;
-                schema:supersededBy ?sup.
-        }""" % (protocol)
-        #Currenty superseded terms are not suppressed from 'current' file dumps
-        #Whereas they are suppressed from the UI
-        #currentGraph.update(desuperseded)
-
-        delattic="""PREFIX schema: <%s://schema.org/>
-        DELETE {?s ?p ?o}
-        WHERE{
-            ?s ?p ?o;
-                schema:isPartOf <%s://attic.schema.org>.
-        }""" % (protocol,protocol)
-        #currentGraph.update(delattic)
-
     formats =  ["json-ld", "turtle", "nt", "nquads", "rdf"]
     extype = exportType[len("RDFExport."):]
     if exportType == "RDFExports":

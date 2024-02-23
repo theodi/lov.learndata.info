@@ -16,16 +16,33 @@ To use DIY schema.org, follow these steps:
    - Run `./software/util/buildsite.py -a` to build the site.
 
 3. **Run the Server**:
-   - Execute `./software/devserv.py` to run the server.
+   - Execute `./software/server.py` to run the server.
+
+4. **View the output**:
+   - Once the server is running, you can view the site at [http://localhost:8080](http://localhost:8080).
 
 4. **Change the URI base**:
    - Open `software/SchemaTerms/sdotermsource.py` and set `DEFVOCABURI` to your base URI (e.g., `https://example.com`).
    - Open `docs/pretty-markup/layout.js` and set `VOCAB_URI` to your base URI (e.g., `var VOCAB_URI = 'https://example.com';`).
+   - Open `software/server.py` and set `VOCAB_URI` to your base URI (e.g., `var VOCAB_URI = 'https://example.com';`).
 
 5. **Define your own schema and examples**:
    - Edit the files in the `data` directory to specify your schema and examples.
 
 6. **GOTO (2)**
+
+## Content negoiation support
+
+The python devserver has been renamed server.py and now supports content negotiation, allowing you to request different representations of the data based on the `Accept` header sent with the request. To use content negotiation:
+
+- Include the `Accept` header in your HTTP request with the desired content type. Supported content types include `text/html`, `application/rdf+xml`, `text/turtle` and `application/ld+json`.
+- The server will respond with the requested representation of the data based on the provided content type.
+
+For example, to request RDF/XML representation of a resource, you can use the following command:
+
+```bash
+curl -H "Accept: application/rdf+xml" http://localhost:8080/<resource_path>
+```
 
 ## Detailed installation
 

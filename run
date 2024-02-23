@@ -1,1 +1,1 @@
-./software/util/buildsite.py -a && ./software/devserv.py
+./software/util/buildsite.py -a && ./software/server.py
